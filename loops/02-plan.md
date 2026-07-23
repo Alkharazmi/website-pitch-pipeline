@@ -48,17 +48,21 @@ Design direction:
   - gstack /design-shotgun when two directions compete
   - diagram-design for user-flow diagram (unique per business)
 
-Copy:
+Copy / marketing:
   - copywriting + ogilvy for positioning/headlines/CTAs in LOCALE language
-  - stop-slop on all long prose in briefs
+  - stop-slop AND no-ai-slop (https://github.com/petergyang/no-ai-slop) on all long prose
+  - AI Marketing Claude (https://github.com/zubair-trabzada/ai-marketing-claude) for audits/positioning
+  - Digital Marketing Pro (https://github.com/indranilbanerjee/digital-marketing-pro) for strategy/SEO depth when installed
 
 Motion / components research:
+  - emilkowalski/skills (https://github.com/emilkowalski/skills) — emil-design-eng, animation vocabulary, apple-design
   - gsap-skills plugin docs for motion plan (only if motion helps)
   - shadcn MCP for component inventory candidates
   - magic MCP for distinctive UI component ideas (do not clone same set every time)
 
-Assets:
-  - firecrawl/browse existing site for colors/logo/photos
+Assets / site evidence:
+  - Firecrawl, Crawl4AI, Webclaw, or Scrapling for existing site colors/logo/copy extraction
+  - gstack /browse for visual checks
   - pollinations or higgsfield only if missing hero imagery and license is mock-safe
 
 ## Non-negotiables

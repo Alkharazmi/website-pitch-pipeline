@@ -103,10 +103,62 @@ Source skills: https://github.com/higgsfield-ai/skills
 CLI: npm install -g @higgsfield/cli
 Auth: follow higgsfield login docs
 
-### B5. Firecrawl CLI (site research)
+### B5. Firecrawl (site research) — https://github.com/firecrawl/firecrawl
   npm install -g firecrawl-cli
-  # set FIRECRAWL_API_KEY if using cloud
+  export FIRECRAWL_API_KEY=...   # https://firecrawl.dev
+  # Advanced self-host: clone firecrawl/firecrawl and follow Docker docs
   which firecrawl && firecrawl --help | head
+
+### B6. Crawl4AI — https://github.com/unclecode/crawl4ai
+  pip install -U crawl4ai
+  # run package browser setup if required (crawl4ai-setup / playwright install)
+  python -c "import crawl4ai; print('crawl4ai ok')"
+
+### B7. Browser Use — https://github.com/browser-use/browser-use
+  # Prefer uv + Python 3.12 per upstream
+  uv pip install browser-use || pip install browser-use
+  browser-use skill install   # when CLI provides it
+  # Docs: https://docs.browser-use.com
+
+### B8. Scrapling — https://github.com/D4Vinci/Scrapling
+  pip install "scrapling[all]"
+  scrapling install           # browser deps
+  # MCP: pip install "scrapling[ai]"
+
+### B9. Webclaw — https://github.com/0xMassi/webclaw
+  brew install webclaw || cargo install --git https://github.com/0xMassi/webclaw.git webclaw-cli
+  npx skills add 0xMassi/webclaw-skill
+  # also install webclaw-mcp for local MCP when possible
+
+### B10. No AI Slop — https://github.com/petergyang/no-ai-slop
+  # Install skill globally for Claude/agent:
+  # "Install this skill globally: https://github.com/petergyang/no-ai-slop"
+  git clone https://github.com/petergyang/no-ai-slop.git ~/.agents/skills/no-ai-slop 2>/dev/null || true
+  # symlink/copy SKILL into ~/.claude/skills if needed
+
+### B11. Emil Kowalski design skills — https://github.com/emilkowalski/skills
+  npx skills@latest add emilkowalski/skills
+
+### B12. AI Marketing Claude — https://github.com/zubair-trabzada/ai-marketing-claude
+  curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/ai-marketing-claude/main/install.sh | bash
+  # or: git clone + ./install.sh
+  pip install reportlab   # PDF reports if needed
+
+### B13. Digital Marketing Pro — https://github.com/indranilbanerjee/digital-marketing-pro
+  # In Claude Code:
+  # /plugin marketplace add indranilbanerjee/neels-plugins   # if needed
+  # /plugin install digital-marketing-pro@neels-plugins
+  # Manual fallback: git clone --depth=1 https://github.com/indranilbanerjee/digital-marketing-pro.git
+
+### B14. SkillOpt (optional meta) — https://github.com/microsoft/SkillOpt
+  pip install skillopt
+  # Optional: clone repo for Claude Code integration shells / skillopt-sleep
+
+### B15. Kepano Obsidian vault template (optional ops) — https://github.com/kepano/kepano-obsidian
+  git clone https://github.com/kepano/kepano-obsidian.git ~/Obsidian/kepano-template
+  # Use as structure for campaign notes (not required for agent runs)
+
+Full catalog: TOOLS.md in this pipeline repo.
 
 ## Phase C — MCP servers
 
@@ -129,12 +181,18 @@ Template: this repo's mcp.example.json
   args: ["-y", "@pollinations/model-context-protocol"]
   Site: https://pollinations.ai
 
-### C4. n8n (optional — only if user wants automation)
+### C4. webclaw MCP (recommended local extract)
+  command/path per https://github.com/0xMassi/webclaw (webclaw-mcp or brew install)
+
+### C5. scrapling MCP (recommended hard scrapes)
+  after: pip install "scrapling[ai]" — wire per Scrapling docs
+
+### C6. n8n (optional — only if user wants automation)
   type: http
   url + Authorization bearer from env
   Do not block pipeline if n8n fails
 
-After config: restart Claude Code and list MCP tools. Failures = report, not silent skip for shadcn/magic/pollinations.
+After config: restart Claude Code and list MCP tools. Failures = report, not silent skip for shadcn/magic/pollinations/webclaw.
 
 ## Phase D — GitHub org readiness
 - gh auth status (use Taha-Mahmoodi / account with org access)
@@ -151,11 +209,22 @@ Checklist (pass/fail each):
 [ ] design skills present (list paths)
 [ ] copy skills present
 [ ] apify CLI + auth (or marked SKIP with reason)
-[ ] firecrawl CLI
-[ ] MCP: shadcn, magic, pollinations reachable
+[ ] firecrawl CLI/API (https://github.com/firecrawl/firecrawl)
+[ ] crawl4ai installed
+[ ] browser-use installed (or SKIP + reason)
+[ ] scrapling + browsers
+[ ] webclaw CLI and/or MCP
+[ ] no-ai-slop skill
+[ ] emilkowalski/skills
+[ ] ai-marketing-claude
+[ ] digital-marketing-pro plugin (or SKIP + reason)
+[ ] skillopt optional status
+[ ] kepano vault template optional status
+[ ] MCP: shadcn, magic, pollinations, webclaw reachable
 [ ] higgsfield optional status
 [ ] GitHub org access (Alkharazmi)
 [ ] Confirmed: pipeline geography is campaign-variable (not hardcoded)
+[ ] TOOLS.md catalog present in pipeline repo
 
 ## Done when
 - All required items PASS (optional items may SKIP with reason)
@@ -169,13 +238,17 @@ Checklist (pass/fail each):
 
 | Required | Optional |
 |----------|----------|
-| Node, git, gh, bun | Higgsfield |
+| Node, git, gh, bun, pip/uv | Higgsfield |
 | gstack + `/browse` | n8n MCP |
 | Design + copy skills | Ponytail |
-| shadcn + magic + pollinations MCP | |
-| Firecrawl CLI | |
+| shadcn + magic + pollinations MCP | SkillOpt |
+| Firecrawl + Crawl4AI | Kepano vault |
+| Scrapling + Webclaw (or documented SKIP) | |
+| no-ai-slop + emilkowalski/skills | |
+| ai-marketing-claude | digital-marketing-pro (SKIP ok if install blocked) |
+| browser-use (or SKIP + reason) | |
 | `Alkharazmi` org access | |
-| `BOOTSTRAP_REPORT.md` | |
+| `BOOTSTRAP_REPORT.md` referencing TOOLS.md | |
 
 ---
 

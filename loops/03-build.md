@@ -46,11 +46,14 @@ Implement:
 QA:
   - gstack /browse + /qa or /qa-only
   - /design-review after visual complete
+  - Browser Use (https://github.com/browser-use/browser-use) for interactive multi-step QA when needed
+  - emilkowalski review-animations / improve-animations skills on motion
   - redesign-existing-projects audit pass if porting from old site patterns
 
 Copy polish:
-  - copy-editing + stop-slop + ogilvy on headlines/CTAs
-  - stop-slop on EMAIL_DRAFT.md (must sound human in the target language)
+  - copy-editing + stop-slop + no-ai-slop + ogilvy on headlines/CTAs
+  - AI Marketing Claude email/outreach skills when helpful
+  - stop-slop + no-ai-slop on EMAIL_DRAFT.md (must sound human in the target language)
 
 ## Build rules
 - Follow that repo's implementation.md and page-plans exactly

@@ -1,0 +1,316 @@
+# Tools & skills catalog (required stack)
+
+External projects the Local Business Website Pitch Pipeline depends on or should install.  
+**Geography-agnostic.** Install once on the machine (Loop 0); use per loop as listed below.
+
+Sources are official GitHub repos. Prefer upstream README if install commands change.
+
+---
+
+## How to use this table
+
+| Column | Meaning |
+|--------|---------|
+| **Role** | Why it is in the pipeline |
+| **Loops** | Where agents must prefer it |
+| **Install** | Bootstrap command(s) |
+| **Required?** | Required = Loop 0 fails without it (or documents SKIP with reason) |
+
+---
+
+## A. Web research, crawl & browser automation
+
+### 1. Firecrawl — [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
+
+| | |
+|--|--|
+| **Role** | Search, scrape, and turn pages into clean data/Markdown at scale |
+| **Loops** | **1** research, **2** brand/asset pull from existing sites |
+| **Required?** | Yes (CLI and/or API) |
+| **Docs** | https://firecrawl.dev · https://docs.firecrawl.dev |
+
+```bash
+# Cloud CLI (common)
+npm install -g firecrawl-cli
+export FIRECRAWL_API_KEY="..."   # https://firecrawl.dev
+
+# Self-host / monorepo (advanced — full stack)
+git clone https://github.com/firecrawl/firecrawl.git
+# follow repo README for Docker / local API
+```
+
+Also already used via this machine’s `firecrawl` CLI when present.
+
+---
+
+### 2. Crawl4AI — [unclecode/crawl4ai](https://github.com/unclecode/crawl4ai)
+
+| | |
+|--|--|
+| **Role** | Open-source LLM-friendly crawler → clean Markdown for agents |
+| **Loops** | **1** deep site audits, **2** content extraction when Firecrawl unavailable or for local-only crawls |
+| **Required?** | Yes (local fallback / bulk crawl) |
+| **Docs** | https://crawl4ai.com |
+
+```bash
+pip install -U crawl4ai
+crawl4ai-setup          # installs browser deps when prompted by package
+# or: python -m playwright install
+```
+
+Prefer for offline-friendly, key-light crawls. Pair with Firecrawl for cloud scale.
+
+---
+
+### 3. Browser Use — [browser-use/browser-use](https://github.com/browser-use/browser-use)
+
+| | |
+|--|--|
+| **Role** | AI browser agent: open pages, click, type, fill forms, extract, QA |
+| **Loops** | **1** interactive verification, **3** visual/flow QA when `/browse` is not enough |
+| **Required?** | Recommended (required for hard interactive sites) |
+| **Docs** | https://docs.browser-use.com |
+
+```bash
+# Prefer uv + Python 3.12 per upstream
+uv pip install browser-use
+# or: pip install browser-use
+browser-use skill install    # register skill with agent clients when available
+```
+
+Agent paste-setup (from upstream): install/upgrade with uv, run `browser-use skill install`, connect browser.  
+Complements gstack `/browse` — use Browser Use for multi-step agentic navigation; use gstack for fast headless QA.
+
+---
+
+### 4. Scrapling — [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)
+
+| | |
+|--|--|
+| **Role** | Adaptive scraping framework + optional MCP server (stealth, spiders, selectors) |
+| **Loops** | **1** stubborn / JS-heavy / anti-bot directories |
+| **Required?** | Recommended |
+| **Docs** | https://scrapling.readthedocs.io |
+
+```bash
+pip install "scrapling[all]"   # or: scrapling[fetchers] then extras
+scrapling install              # browser dependencies
+# MCP server:
+pip install "scrapling[ai]"
+```
+
+Use when simple HTTP + Firecrawl/Crawl4AI fail. Respect site ToS and local law.
+
+---
+
+### 5. Webclaw — [0xMassi/webclaw](https://github.com/0xMassi/webclaw)
+
+| | |
+|--|--|
+| **Role** | Fast local-first extraction (Rust): CLI, REST, MCP — Firecrawl-like without cloud lock-in |
+| **Loops** | **1** bulk extract, **0** MCP alternative when cloud keys missing |
+| **Required?** | Recommended (local MCP) |
+| **Docs** | https://webclaw.io |
+
+```bash
+# macOS
+brew install webclaw
+
+# or Cargo
+cargo install --git https://github.com/0xMassi/webclaw.git webclaw-cli
+cargo install --git https://github.com/0xMassi/webclaw.git webclaw-mcp
+
+# skill (skills.sh style)
+npx skills add 0xMassi/webclaw-skill
+
+# zero-install MCP: npx create-webclaw / point client at webclaw MCP per README
+```
+
+Add to Claude MCP config when installed (stdio → `webclaw-mcp` or documented npx launcher).
+
+---
+
+## B. Writing quality & anti-slop
+
+### 6. No AI Slop — [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)
+
+| | |
+|--|--|
+| **Role** | Strip 20+ AI writing patterns from prose |
+| **Loops** | **2** briefs/copy, **3** EMAIL_DRAFT.md + on-page copy |
+| **Required?** | Yes (alongside `stop-slop` if both installed — run at least one) |
+
+```bash
+# Claude / agent skill install (global)
+# Paste to agent: Install this skill globally: https://github.com/petergyang/no-ai-slop
+# or:
+npx skills add petergyang/no-ai-slop   # if published on skills CLI
+git clone https://github.com/petergyang/no-ai-slop.git ~/.agents/skills/no-ai-slop
+# ensure SKILL.md is discoverable by Claude Code
+```
+
+Article: https://creatoreconomy.so/p/use-my-no-ai-slop-skill-to-remove-20-ai-slop-patterns
+
+---
+
+## C. Skill systems & marketing packs
+
+### 7. SkillOpt — [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt)
+
+| | |
+|--|--|
+| **Role** | Optimize reusable skill documents from agent trajectories (train `best_skill.md`) |
+| **Loops** | **0** optional continuous improvement of pipeline skills; post-batch retros |
+| **Required?** | Optional (power users / meta-improvement) |
+| **Docs** | https://microsoft.github.io/SkillOpt/ · https://aka.ms/skillopt |
+
+```bash
+pip install skillopt
+# Claude Code / Codex integration shells live in the upstream repo (not always in the wheel)
+git clone https://github.com/microsoft/SkillOpt.git
+# follow docs for skillopt-sleep / harness plugins
+```
+
+Use after several campaign runs to harden custom skills (research rubric, email tone, design critique).
+
+---
+
+### 8. AI Marketing for Claude — [zubair-trabzada/ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude)
+
+| | |
+|--|--|
+| **Role** | Marketing suite for Claude Code: audit, copy, email, ads, competitive intel, PDF reports |
+| **Loops** | **1** competitive/site audit signals, **2** positioning/copy, **3** EMAIL_DRAFT + campaign assets |
+| **Required?** | Yes (marketing depth) |
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/zubair-trabzada/ai-marketing-claude/main/install.sh | bash
+# or:
+git clone https://github.com/zubair-trabzada/ai-marketing-claude.git
+cd ai-marketing-claude && ./install.sh
+pip install reportlab   # if PDF reports needed
+```
+
+---
+
+### 9. Digital Marketing Pro — [indranilbanerjee/digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro)
+
+| | |
+|--|--|
+| **Role** | Large open-source marketing plugin (many skills/agents): strategy, SEO/AEO/GEO, agency workflows |
+| **Loops** | **2** strategy/IA/copy systems, **3** SEO-aware demos + outreach positioning |
+| **Required?** | Recommended |
+
+```bash
+# Claude Code (canonical)
+# In Claude Code:
+# /plugin marketplace add indranilbanerjee/neels-plugins   # if not already
+# /plugin install digital-marketing-pro@neels-plugins
+
+# Manual
+git clone --depth=1 https://github.com/indranilbanerjee/digital-marketing-pro.git
+# follow platform table in upstream README (Codex, Cursor, Copilot CLI, etc.)
+```
+
+Marketplace reference: `indranilbanerjee/neels-plugins`.
+
+---
+
+## D. Knowledge base & design-engineer skills
+
+### 10. Kepano Obsidian vault — [kepano/kepano-obsidian](https://github.com/kepano/kepano-obsidian)
+
+| | |
+|--|--|
+| **Role** | Personal Obsidian vault template — structure for notes, campaigns, research |
+| **Loops** | Optional **ops**: store campaign notes, Excel decisions, Gate A/B/C logs outside git |
+| **Required?** | Optional (recommended for multi-campaign memory) |
+| **Docs** | https://stephango.com/vault |
+
+```bash
+git clone https://github.com/kepano/kepano-obsidian.git ~/Obsidian/kepano-template
+# Open as vault in Obsidian; copy structure for "Alkharazmi campaigns"
+# Suggested folders: Campaigns/<GEO_SLUG>/, Leads/, Plans/, Outreach/
+```
+
+Not an agent skill — a **human + agent note system**. Point agents at campaign vault paths when present.
+
+---
+
+### 11. Emil Kowalski skills — [emilkowalski/skills](https://github.com/emilkowalski/skills)
+
+| | |
+|--|--|
+| **Role** | Design-engineer taste: animation, UI polish, anti-slop interfaces (Vercel/Linear-grade) |
+| **Loops** | **2** motion/UI direction, **3** implement + review animations |
+| **Required?** | Yes (demo quality bar) |
+| **skills.sh** | https://skills.sh/emilkowalski/skills |
+
+```bash
+npx skills@latest add emilkowalski/skills
+```
+
+Included skills (upstream): `emil-design-eng`, `review-animations`, `improve-animations`, `find-animation-opportunities`, `animation-vocabulary`, `apple-design`, `pick-ui-library`.
+
+---
+
+## E. Already in pipeline (keep)
+
+| Project | Repo / site | Notes |
+|---------|-------------|--------|
+| gstack | [garrytan/gstack](https://github.com/garrytan/gstack) | `/browse`, design, QA, ship |
+| stop-slop | [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) | Pairs with no-ai-slop |
+| GSAP skills | [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | Motion implementation |
+| shadcn MCP | [ui.shadcn.com](https://ui.shadcn.com/docs/mcp) | Components |
+| Higgsfield skills | [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills) | Optional assets |
+
+Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md).
+
+---
+
+## Loop → tool matrix
+
+| Loop | Prefer these |
+|------|----------------|
+| **0 Bootstrap** | Install **all Required** rows above + MCP wiring for Scrapling/Webclaw when used |
+| **1 Research** | Firecrawl · Crawl4AI · Scrapling · Webclaw · Browser Use · Apify · marketing audit skills |
+| **2 Plan** | Firecrawl/Crawl4AI for assets · Emil skills · AI Marketing · Digital Marketing Pro · no-ai-slop |
+| **3 Build** | Emil skills · GSAP · shadcn · Browser Use / gstack QA · no-ai-slop on email · marketing email skills |
+
+---
+
+## Legal / ethics (scrapers)
+
+- Public business data only for outreach fields.  
+- Respect robots.txt, site terms, and local law.  
+- Prefer rate limits; no credential stuffing or private data harvest.  
+- Every email still needs a **source URL** (unchanged pipeline rule).
+
+---
+
+## Env vars (never commit)
+
+```bash
+export FIRECRAWL_API_KEY="..."
+export APIFY_TOKEN="..."
+export MAGIC_API_KEY="..."
+# Browser Use / LLM keys as required by that tool's docs
+```
+
+---
+
+## Verify (add to BOOTSTRAP_REPORT.md)
+
+```text
+[ ] firecrawl CLI or API
+[ ] crawl4ai import / CLI
+[ ] browser-use installed (or SKIP + reason)
+[ ] scrapling + scrapling install browsers
+[ ] webclaw CLI and/or MCP
+[ ] no-ai-slop skill present
+[ ] emilkowalski/skills installed
+[ ] ai-marketing-claude installed
+[ ] digital-marketing-pro plugin installed (or SKIP)
+[ ] skillopt optional status
+[ ] kepano vault template cloned optional status
+```

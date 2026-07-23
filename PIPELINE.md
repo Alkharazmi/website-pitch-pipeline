@@ -122,17 +122,32 @@ User preferences for later full products: HTML, CSS, JavaScript, Next.js; backen
 | `copy-editing` | Edit / polish |
 | `ogilvy` / `ogilvy-copywriting` | Headlines that sell |
 | `stop-slop` | Kill AI-sounding prose (emails especially) |
+| `no-ai-slop` ([petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)) | Extra anti-slop pass on briefs + emails |
+| AI Marketing Claude ([zubair-trabzada/ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude)) | Audits, sequences, competitive intel, PDF reports |
+| Digital Marketing Pro ([indranilbanerjee/digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro)) | Strategy / SEO / agency-depth marketing skills |
+
+### Design-engineer motion (Loops 2–3)
+
+| Skill | Role |
+|-------|------|
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) | Animation taste, review-animations, apple-design, pick-ui-library |
 
 ### Research (Loop 1)
 
 | Skill / tool | Role |
 |--------------|------|
 | `apify-ultimate-scraper` | Maps / social / leads (needs Apify token) |
-| `firecrawl` CLI | Site crawl / extract |
-| gstack `/scrape` | Structured page pulls |
-| WebSearch + `/browse` | Verification |
+| [Firecrawl](https://github.com/firecrawl/firecrawl) | Cloud/self-host scrape + search at scale |
+| [Crawl4AI](https://github.com/unclecode/crawl4ai) | Local LLM-friendly crawl → Markdown |
+| [Scrapling](https://github.com/D4Vinci/Scrapling) | Adaptive / stealth scrape + optional MCP |
+| [Webclaw](https://github.com/0xMassi/webclaw) | Fast local-first extract CLI/MCP |
+| [Browser Use](https://github.com/browser-use/browser-use) | Agentic browser for hard interactive sites |
+| gstack `/scrape` · `/browse` | Structured pulls + headless QA |
+| WebSearch | Discovery gaps |
 
-### Optional creative
+Full install + loop matrix: **[`TOOLS.md`](./TOOLS.md)**.
+
+### Optional creative & meta
 
 | Skill / MCP | Role |
 |-------------|------|
@@ -140,6 +155,8 @@ User preferences for later full products: HTML, CSS, JavaScript, Next.js; backen
 | `pollinations-images` MCP | Free image gen fallback |
 | `magic` MCP (21st.dev) | UI component ideas |
 | `shadcn` MCP | shadcn components |
+| [SkillOpt](https://github.com/microsoft/SkillOpt) | Optimize pipeline skills from trajectories (optional) |
+| [kepano-obsidian](https://github.com/kepano/kepano-obsidian) | Campaign note vault template (optional ops) |
 
 ---
 
@@ -150,6 +167,8 @@ User preferences for later full products: HTML, CSS, JavaScript, Next.js; backen
 | **shadcn** | `npx -y shadcn@latest mcp` | Yes (build) |
 | **magic** (21st.dev) | `npx -y @21st-dev/magic@latest` + `API_KEY` | Recommended |
 | **pollinations-images** | `npx -y @pollinations/model-context-protocol` | Recommended |
+| **webclaw** | `webclaw-mcp` or brew/npx per [0xMassi/webclaw](https://github.com/0xMassi/webclaw) | Recommended (local extract) |
+| **scrapling** | via `pip install "scrapling[ai]"` MCP | Recommended (hard scrapes) |
 | **n8n** | HTTP MCP URL + bearer | Optional automation |
 
 **Secrets:** use environment variables. Never commit API keys or tokens.
@@ -259,3 +278,4 @@ Prefer **one loop per session** so context stays clean.
 | [loops/03-build.md](./loops/03-build.md) | Implementation + email |
 | [mcp.example.json](./mcp.example.json) | MCP config template (no secrets) |
 | [INSTALL.md](./INSTALL.md) | Install sources cheat sheet |
+| [TOOLS.md](./TOOLS.md) | Required external tools/skills catalog + install |

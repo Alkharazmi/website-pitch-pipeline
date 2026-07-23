@@ -40,12 +40,17 @@ TARGET_COUNT: 15
 Loop 0 required items PASS. Read ./pipeline-runs/BOOTSTRAP_REPORT.md if present.
 If GEOGRAPHY or GEO_SLUG is missing, stop and ask — never invent a default location.
 
-## Tools to use
+## Tools to use (prefer stack in TOOLS.md)
 - apify-ultimate-scraper (Maps / directories for the target country) when auth available
-- firecrawl for existing websites
-- gstack /browse or /scrape for verification
+- Firecrawl (https://github.com/firecrawl/firecrawl) for search/scrape at scale
+- Crawl4AI (https://github.com/unclecode/crawl4ai) for local LLM-friendly crawls → Markdown
+- Scrapling (https://github.com/D4Vinci/Scrapling) when sites need adaptive/stealth fetch
+- Webclaw (https://github.com/0xMassi/webclaw) for fast local-first extract / MCP
+- Browser Use (https://github.com/browser-use/browser-use) for multi-step interactive verification
+- gstack /browse or /scrape for lighter verification
+- AI Marketing Claude / Digital Marketing Pro for site audit signals when installed
 - WebSearch for gaps (query in the local language when helpful)
-- Do NOT invent emails
+- Do NOT invent emails; respect ToS and local law
 
 ## Objective
 Find local businesses **inside the stated GEOGRAPHY** that either have no website or a clearly outdated/weak website. Produce one clean Excel workbook for outreach and site planning. Geography is not locked to any single market.

@@ -74,6 +74,7 @@ Full rules: [`PIPELINE.md`](./PIPELINE.md).
 
 Full system write-up: **[`PIPELINE.md`](./PIPELINE.md)**  
 Install sources: **[`INSTALL.md`](./INSTALL.md)**  
+Tools catalog (Firecrawl, Crawl4AI, Browser Use, Scrapling, Webclaw, marketing & design skills…): **[`TOOLS.md`](./TOOLS.md)**  
 MCP template: **[`mcp.example.json`](./mcp.example.json)**
 
 ---
@@ -175,22 +176,26 @@ Paste the fenced prompt from the matching `loops/*.md` file **with campaign fiel
 
 | Layer | Examples |
 |-------|----------|
-| Design | `impeccable`, `design-taste-frontend`, gstack `/design-consultation`, `/design-shotgun`, `/design-review` |
-| Copy | `copywriting`, `ogilvy`, `stop-slop` |
-| Research | Apify scraper skill, Firecrawl, gstack `/browse` · `/scrape` |
-| MCP | shadcn, magic (21st.dev), pollinations-images |
-| Motion | `gsap-skills` plugin |
-| Diagrams | `diagram-design` plugin |
+| Design | `impeccable`, `design-taste-frontend`, gstack design skills, [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| Copy | `copywriting`, `ogilvy`, `stop-slop`, [no-ai-slop](https://github.com/petergyang/no-ai-slop) |
+| Marketing packs | [ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude), [digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro) |
+| Research | Apify, [Firecrawl](https://github.com/firecrawl/firecrawl), [Crawl4AI](https://github.com/unclecode/crawl4ai), [Scrapling](https://github.com/D4Vinci/Scrapling), [Webclaw](https://github.com/0xMassi/webclaw), [Browser Use](https://github.com/browser-use/browser-use) |
+| MCP | shadcn, magic, pollinations, webclaw, scrapling |
+| Motion | `gsap-skills`, Emil animation skills |
+| Meta / ops | [SkillOpt](https://github.com/microsoft/SkillOpt), [kepano-obsidian](https://github.com/kepano/kepano-obsidian) |
+
+See [`TOOLS.md`](./TOOLS.md) for install commands and which loop uses what.
 
 ---
 
 ## Repo layout
 
 ```text
-nyc-website-pitch-pipeline/          # GitHub name (historical)
+website-pitch-pipeline/
 ├── README.md
 ├── PIPELINE.md                      # full system
-├── INSTALL.md
+├── INSTALL.md                       # short install table
+├── TOOLS.md                         # required external tools + skills
 ├── mcp.example.json
 └── loops/
     ├── 00-bootstrap.md
