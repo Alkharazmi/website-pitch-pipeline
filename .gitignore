@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+nyc-leads/
+nyc-pipeline/BOOTSTRAP_REPORT.md
+*.xlsx
+node_modules/
+.claude/settings.local.json

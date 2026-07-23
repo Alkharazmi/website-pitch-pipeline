@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "shadcn@latest", "mcp"],
+      "env": {}
+    },
+    "magic": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@21st-dev/magic@latest"],
+      "env": {
+        "API_KEY": "${MAGIC_API_KEY}"
+      }
+    },
+    "pollinations-images": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@pollinations/model-context-protocol"],
+      "env": {}
+    },
+    "n8n": {
+      "type": "http",
+      "url": "${N8N_MCP_URL}",
+      "headers": {
+        "Authorization": "Bearer ${N8N_MCP_TOKEN}"
+      },
+      "_comment": "Optional. Omit entirely if you are not using n8n automation."
+    }
+  }
+}
