@@ -35,6 +35,13 @@ GEO_SLUG and GEOGRAPHY must match the Excel campaign columns — never switch ma
 For each selected business, create a unique website plan package that would get the owner to the negotiation table in **their** market and language. Aesthetics and clarity > deep functionality.
 
 ## Skills — MUST load and follow (not optional name-drops)
+Ideation (required for uniqueness):
+  - ADHD skill (https://github.com/UditAkhourii/adhd) — run diverge→score→prune→deepen for
+    positioning, homepage concepts, IA options, and "what traps look good but aren't"
+    before locking a single template. Install: npx skills add UditAkhourii/adhd
+  - Branerail (https://github.com/UditAkhourii/branerail) when defining system shape,
+    implementation.md architecture, resilience, or DESIGN.md discipline
+
 Design direction:
   - design-taste-frontend (brief inference + anti-slop)
   - impeccable (init design context / brand register for marketing sites)

@@ -132,6 +132,14 @@ User preferences for later full products: HTML, CSS, JavaScript, Next.js; backen
 |-------|------|
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) | Animation taste, review-animations, apple-design, pick-ui-library |
 
+### Ideation & architecture — [UditAkhourii](https://github.com/UditAkhourii)
+
+| Skill / tool | Role |
+|--------------|------|
+| [ADHD](https://github.com/UditAkhourii/adhd) | Parallel divergent ideation; unique directions without early anchoring |
+| [Branerail](https://github.com/UditAkhourii/branerail) | CTO-level architecture, specs, resilience, DESIGN.md discipline |
+| [Brane Code](https://github.com/UditAkhourii/brane-code) | Optional model-agnostic coding runtime |
+
 ### Research (Loop 1)
 
 | Skill / tool | Role |

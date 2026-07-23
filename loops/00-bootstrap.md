@@ -158,6 +158,15 @@ Auth: follow higgsfield login docs
   git clone https://github.com/kepano/kepano-obsidian.git ~/Obsidian/kepano-template
   # Use as structure for campaign notes (not required for agent runs)
 
+### B16. Udit Akhouri stack — https://github.com/UditAkhourii
+  # ADHD — required divergent ideation skill
+  npx skills add UditAkhourii/adhd
+  # Branerail — CTO architecture skill (recommended)
+  npm install -g @uditakhouri/branerail
+  # Brane Code — optional alternate coding runtime
+  # git clone https://github.com/UditAkhourii/brane-code.git
+  # Docs: https://adhdstack.github.io/
+
 Full catalog: TOOLS.md in this pipeline repo.
 
 ## Phase C — MCP servers
@@ -216,10 +225,13 @@ Checklist (pass/fail each):
 [ ] webclaw CLI and/or MCP
 [ ] no-ai-slop skill
 [ ] emilkowalski/skills
+[ ] UditAkhourii/adhd (npx skills add UditAkhourii/adhd)
+[ ] branerail (@uditakhouri/branerail) or SKIP + reason
 [ ] ai-marketing-claude
 [ ] digital-marketing-pro plugin (or SKIP + reason)
 [ ] skillopt optional status
 [ ] kepano vault template optional status
+[ ] brane-code optional status
 [ ] MCP: shadcn, magic, pollinations, webclaw reachable
 [ ] higgsfield optional status
 [ ] GitHub org access (Alkharazmi)
@@ -245,6 +257,7 @@ Checklist (pass/fail each):
 | Firecrawl + Crawl4AI | Kepano vault |
 | Scrapling + Webclaw (or documented SKIP) | |
 | no-ai-slop + emilkowalski/skills | |
+| UditAkhourii/adhd | branerail, brane-code |
 | ai-marketing-claude | digital-marketing-pro (SKIP ok if install blocked) |
 | browser-use (or SKIP + reason) | |
 | `Alkharazmi` org access | |

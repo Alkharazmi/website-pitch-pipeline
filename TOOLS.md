@@ -254,7 +254,67 @@ Included skills (upstream): `emil-design-eng`, `review-animations`, `improve-ani
 
 ---
 
-## E. Already in pipeline (keep)
+## E. Ideation & architecture (Udit Akhouri)
+
+Author profile: [github.com/UditAkhourii](https://github.com/UditAkhourii) · site: [uditakhouri.com](https://uditakhouri.com)
+
+### 12. ADHD (agent skill) — [UditAkhourii/adhd](https://github.com/UditAkhourii/adhd)
+
+| | |
+|--|--|
+| **Role** | Parallel divergent ideation: isolated cognitive frames → score → prune traps → deepen survivors. Fixes premature convergence on design, naming, API surface, strategy, fuzzy problems |
+| **Loops** | **2** unique site concepts / IA / positioning alternatives; **3** when stuck on UX or structure; any “give me several non-obvious options” step |
+| **Required?** | Yes (creative differentiation bar for non-template sites) |
+| **Docs** | https://adhdstack.github.io/ · Discord in upstream README |
+
+```bash
+npx skills add UditAkhourii/adhd
+# auto-detects Claude Code, Cursor, Codex, and many other agents
+```
+
+**When to invoke:** design decisions, multiple homepage directions, naming, “what could go wrong,” strategy for a business pitch — **not** for routine file edits.
+
+npm package (related): [`adhd-agent`](https://www.npmjs.com/package/adhd-agent)
+
+---
+
+### 13. Branerail — [UditAkhourii/branerail](https://github.com/UditAkhourii/branerail)
+
+| | |
+|--|--|
+| **Role** | CTO-level architectural skill for Claude Code: design-first, resilience, state ownership, observability, blast radius, DESIGN.md / specs |
+| **Loops** | **2** `implementation.md` + system shape; **3** before non-trivial build choices; audits of generated architecture |
+| **Required?** | Recommended (especially when a demo grows past pure marketing pages) |
+
+```bash
+npm install -g @uditakhouri/branerail
+# or project:
+npm install --save-dev @uditakhouri/branerail
+# CLI helpers after install: branerail-audit, branerail-chaos (see upstream)
+```
+
+Trigger topics: architecture, scale, resilience, state ownership, blast radius, observability, `DESIGN.md`, code review.
+
+---
+
+### 14. Brane Code (optional runtime) — [UditAkhourii/brane-code](https://github.com/UditAkhourii/brane-code)
+
+| | |
+|--|--|
+| **Role** | Lightweight model-agnostic AI coding runtime (OpenRouter/OpenAI); alternative coding agent host |
+| **Loops** | Optional host if not using Claude Code for a batch |
+| **Required?** | Optional |
+
+```bash
+# follow upstream README for install / brane CLI usage
+git clone https://github.com/UditAkhourii/brane-code.git
+```
+
+Pipeline default remains **Claude Code + gstack**. Brane Code is an escape hatch, not a requirement.
+
+---
+
+## F. Already in pipeline (keep)
 
 | Project | Repo / site | Notes |
 |---------|-------------|--------|
@@ -272,10 +332,10 @@ Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md)
 
 | Loop | Prefer these |
 |------|----------------|
-| **0 Bootstrap** | Install **all Required** rows above + MCP wiring for Scrapling/Webclaw when used |
+| **0 Bootstrap** | Install **all Required** rows above + MCP wiring for Scrapling/Webclaw when used + **ADHD** skill |
 | **1 Research** | Firecrawl · Crawl4AI · Scrapling · Webclaw · Browser Use · Apify · marketing audit skills |
-| **2 Plan** | Firecrawl/Crawl4AI for assets · Emil skills · AI Marketing · Digital Marketing Pro · no-ai-slop |
-| **3 Build** | Emil skills · GSAP · shadcn · Browser Use / gstack QA · no-ai-slop on email · marketing email skills |
+| **2 Plan** | **ADHD** for unique concepts · Branerail for architecture · Firecrawl/Crawl4AI · Emil · marketing packs · no-ai-slop |
+| **3 Build** | Emil · GSAP · shadcn · Browser Use / gstack QA · ADHD when stuck · Branerail audits · no-ai-slop on email |
 
 ---
 
@@ -309,8 +369,11 @@ export MAGIC_API_KEY="..."
 [ ] webclaw CLI and/or MCP
 [ ] no-ai-slop skill present
 [ ] emilkowalski/skills installed
+[ ] UditAkhourii/adhd installed (npx skills add UditAkhourii/adhd)
+[ ] branerail installed (or SKIP + reason)
 [ ] ai-marketing-claude installed
 [ ] digital-marketing-pro plugin installed (or SKIP)
 [ ] skillopt optional status
 [ ] kepano vault template cloned optional status
+[ ] brane-code optional status
 ```

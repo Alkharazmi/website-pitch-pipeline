@@ -47,6 +47,10 @@ Quick reference for Loop 0 and new machines. Prefer official docs if URLs move.
 | **Digital Marketing Pro** | [indranilbanerjee/digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro) | `/plugin install digital-marketing-pro@neels-plugins` |
 | **Kepano Obsidian** | [kepano/kepano-obsidian](https://github.com/kepano/kepano-obsidian) | `git clone` vault template (optional ops) |
 | **Emil design skills** | [emilkowalski/skills](https://github.com/emilkowalski/skills) | `npx skills@latest add emilkowalski/skills` |
+| **ADHD (ideation)** | [UditAkhourii/adhd](https://github.com/UditAkhourii/adhd) | `npx skills add UditAkhourii/adhd` |
+| **Branerail (architecture)** | [UditAkhourii/branerail](https://github.com/UditAkhourii/branerail) | `npm i -g @uditakhouri/branerail` |
+| **Brane Code (optional runtime)** | [UditAkhourii/brane-code](https://github.com/UditAkhourii/brane-code) | clone + upstream README |
+| **Udit Akhouri (author)** | [github.com/UditAkhourii](https://github.com/UditAkhourii) | profile / other experiments |
 
 ## Environment variables (never commit)
 

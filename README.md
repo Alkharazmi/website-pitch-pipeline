@@ -177,6 +177,7 @@ Paste the fenced prompt from the matching `loops/*.md` file **with campaign fiel
 | Layer | Examples |
 |-------|----------|
 | Design | `impeccable`, `design-taste-frontend`, gstack design skills, [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| Ideation / architecture | [ADHD](https://github.com/UditAkhourii/adhd), [Branerail](https://github.com/UditAkhourii/branerail) ([UditAkhourii](https://github.com/UditAkhourii)) |
 | Copy | `copywriting`, `ogilvy`, `stop-slop`, [no-ai-slop](https://github.com/petergyang/no-ai-slop) |
 | Marketing packs | [ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude), [digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro) |
 | Research | Apify, [Firecrawl](https://github.com/firecrawl/firecrawl), [Crawl4AI](https://github.com/unclecode/crawl4ai), [Scrapling](https://github.com/D4Vinci/Scrapling), [Webclaw](https://github.com/0xMassi/webclaw), [Browser Use](https://github.com/browser-use/browser-use) |
