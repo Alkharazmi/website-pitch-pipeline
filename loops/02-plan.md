@@ -1,8 +1,19 @@
 # Loop 2 — Plan sites + create repos
 
 > For each approved lead: unique website plan, design system, page plans, and a GitHub repo under **Alkharazmi**.  
-> Tag repos `pending-beta`.  
-> **Stop after the first full plan** for Gate B before planning the rest of the batch.
+> Tag repos `pending-beta` + `geo:<GEO_SLUG>`.  
+> **Stop after the first full plan** for Gate B before planning the rest of the batch.  
+> Geography comes from the campaign / Excel — not hardcoded.
+
+---
+
+## Campaign variables (must match Gate A Excel)
+
+```text
+GEOGRAPHY:
+GEO_SLUG:
+LOCALE / LANGUAGE:
+```
 
 ---
 
@@ -11,16 +22,17 @@
 ```text
 /loop [auto]
 /goal
-# Loop 2 — Unique website plans + pending-beta repos
+# Loop 2 — Unique website plans + pending-beta repos (any geography)
 
 ## Prerequisite
 Gate A approved Excel at:
-./nyc-leads/nyc-business-leads-batch-1.xlsx
+./leads/<GEO_SLUG>-business-leads-batch-1.xlsx
 Process only Fit Score ≥ 7, max 5 businesses in batch 1.
 Stop after first completed plan repo and wait for human approval of that sample before continuing the rest.
+GEO_SLUG and GEOGRAPHY must match the Excel campaign columns — never switch markets mid-batch without a human.
 
 ## Objective
-For each selected business, create a unique website plan package that would get the owner to the negotiation table. Aesthetics and clarity > deep functionality.
+For each selected business, create a unique website plan package that would get the owner to the negotiation table in **their** market and language. Aesthetics and clarity > deep functionality.
 
 ## Skills — MUST load and follow (not optional name-drops)
 Design direction:
@@ -37,7 +49,7 @@ Design direction:
   - diagram-design for user-flow diagram (unique per business)
 
 Copy:
-  - copywriting + ogilvy for positioning/headlines/CTAs
+  - copywriting + ogilvy for positioning/headlines/CTAs in LOCALE language
   - stop-slop on all long prose in briefs
 
 Motion / components research:
@@ -52,9 +64,10 @@ Assets:
 ## Non-negotiables
 - No shared visual template across businesses
 - Plan must exploit their strengths and counter their weaknesses from the Excel
+- Reflect local geography: place names, trust signals, phone formats, maps embeds, cultural tone for GEOGRAPHY + LOCALE
 - Prefer marketing/demo site architecture unless research proves a real app is needed
-- Pull brand cues from existing site/social/Maps (logo, colors, photos if usable for mock)
-- If no site: derive brand from name + niche + NYC neighborhood + public assets only
+- Pull brand cues from existing site/social/maps (logo, colors, photos if usable for mock)
+- If no site: derive brand from name + niche + local area + public assets only
 - Requirements: each website must have a unique workflow, user flow, structure, and pipeline tailored to that exact business
 
 ## Scoring rubric (max 100; need ≥90)
@@ -65,23 +78,23 @@ Self-review checklist, each item 0–10:
 4. Weaknesses addressed (trust, CTA, clarity, mobile)
 5. Page-by-page IA makes sense for that business
 6. Component inventory complete
-7. Copy direction specific (not lorem)
+7. Copy direction specific (not lorem); correct LOCALE
 8. Asset list complete (what exists / what to generate)
 9. Implementation.md is executable by an agent without questions
-10. Repo hygiene (README, tags, structure)
+10. Repo hygiene (README, tags including geo:<GEO_SLUG>, structure)
 
 Second pass: improve weakest 3 scores; target ≥95. Do not invent a fake "120" scale.
 
 ## Per-business repo
 - Org: Alkharazmi
-- Name: nyc-<category-slug>-<business-slug>
-- Topics/tags: nyc-lead, pending-beta, batch-1
+- Name: <GEO_SLUG>-<category-slug>-<business-slug>
+- Topics/tags: web-lead, pending-beta, batch-1, geo:<GEO_SLUG>
 - Branches: dev (default), prod
 - Human merge required; CI must pass before review requested
 - All code reviewed by a human before PR merge; GitHub Actions verify before review is requested
 
 ## Required files per repo
-1. brief.md — business, audience, offer, strengths, weaknesses, conversion goal
+1. brief.md — business, audience, geography, locale, offer, strengths, weaknesses, conversion goal
 2. implementation.md — agent build prompt, stack choice, structure, hard performance rules
 3. design-system.md / DESIGN.md — color, type, spacing, motion, tone (unique)
 4. page-plans/ — one md per page: sections top→bottom, components, copy notes
@@ -89,7 +102,7 @@ Second pass: improve weakest 3 scores; target ≥95. Do not invent a fake "120" 
 6. user-flow.md — unique user flow for this business
 7. handling-protocols.md — file/folder naming, context loss, resume after power outage, multi-agent, sandbox test, visual test (/browse), token optimization
 8. github-workflow.md — dev/prod, PR, CI, human review, issues → fix → merge → promote
-9. README.md — what this repo is, status, how to run later
+9. README.md — what this repo is, status, campaign geo, how to run later
 10. skills-used.md — which skills/MCP applied + why
 
 Structural requirements: structure the way that best fits the uniqueness of each project.
@@ -108,7 +121,7 @@ Use gstack design skills and custom global skills already installed.
 
 ## Done when (per business)
 - Checklist ≥90
-- Repo exists under Alkharazmi with tags pending-beta + batch-1
+- Repo exists under Alkharazmi with tags pending-beta + batch-1 + geo:<GEO_SLUG>
 - All required files present on dev
 - Sample first repo paused for human Gate B
 ```
@@ -119,9 +132,10 @@ Use gstack design skills and custom global skills already installed.
 
 - [ ] Score ≥ 90 (documented)  
 - [ ] Unique design lane vs other batch sites  
+- [ ] Local geo + language reflected  
 - [ ] All required files present  
-- [ ] Repo under `Alkharazmi` with correct tags  
-- [ ] `dev` / `prod` branch model documented  
+- [ ] Repo under `Alkharazmi` named with `GEO_SLUG`  
+- [ ] Tags include `geo:<GEO_SLUG>`  
 - [ ] First of batch stopped for **Gate B**  
 
 ---

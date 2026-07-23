@@ -1,7 +1,33 @@
-# NYC Website Pitch Pipeline
+# Local Business Website Pitch Pipeline
 
-> Find New York City businesses with weak or missing websites → research them → plan unique site concepts → build demo sites → draft outreach.  
+> Find local businesses with weak or missing websites → research them → plan unique site concepts → build demo sites → draft outreach.  
 > Goal: get owners to the negotiation table. **Aesthetics and clarity beat deep functionality** on the first pass.
+
+**Geography is not fixed.** Every run sets a campaign location (city, region, multi-city, or country-wide niche). Do not assume New York or any other default.
+
+---
+
+## Campaign variables (set before Loop 1)
+
+Fill this block at the start of every run. Agents must not invent a location.
+
+```text
+CAMPAIGN_NAME:     [e.g. istanbul-tailors-batch-1, berlin-auto-repair-q3]
+GEOGRAPHY:         [e.g. Istanbul, TR | Berlin, DE | NYC five boroughs | national-US plumbers]
+GEO_SLUG:          [short slug for files/repos, e.g. istanbul, berlin, nyc, us-plumbers]
+LOCALE / LANGUAGE: [e.g. en, tr, de — site copy + outreach language]
+VERTICALS:         [1–2 niches, e.g. tailors, auto repair]
+BATCH_SIZE:        [default 5 plans/builds; research count often 15]
+ORG:               Alkharazmi
+```
+
+### Geography rules
+
+- **Not locked** to one city, country, or language.
+- Scope can be: neighborhood · city · metro · multi-city · region · country · niche-without-hard-geo (still record where each business operates).
+- Excel always includes **location columns** that match the campaign (city / region / country as needed — not only “borough”).
+- Repo names, tags, and lead folders use `GEO_SLUG`, never a hardcoded city.
+- Design and copy should reflect **local** culture, language, and trust signals for that geography.
 
 ---
 
@@ -21,24 +47,26 @@
 ## Shared project rules
 
 ```text
-PROJECT: NYC Local Business Website Pitch Pipeline
+PROJECT: Local Business Website Pitch Pipeline
 ORG:     Alkharazmi
 BATCH:   5 businesses max unless a human expands scope
+GEO:     set per campaign (see Campaign variables)
 ```
 
 ### Human gates
 
 | Gate | After | Human checks |
 |------|--------|--------------|
-| **A** | Loop 1 | Excel is complete, contacts are public, fit scores make sense |
-| **B** | First Loop 2 repo | Plan is unique, usable, not a generic template |
-| **C** | First Loop 3 site | UI is sharp, mobile works, distinct from other demos |
+| **A** | Loop 1 | Excel is complete, geo matches campaign, contacts are public, fit scores make sense |
+| **B** | First Loop 2 repo | Plan is unique, local, usable, not a generic template |
+| **C** | First Loop 3 site | UI is sharp, mobile works, distinct from other demos, language/locale correct |
 
 ### Legal & contact
 
 - Use **only publicly listed** business emails / phones / contact forms.
 - Every email cell must include an **Email Source URL**.
 - **Do not invent** emails or scrape personal inboxes.
+- Respect local marketing / spam / data rules for the campaign country when known.
 - Demo sites are **sales concepts** unless the owner has contracted work.
 - Do not claim a site is “already live on their domain” unless that is true.
 
@@ -140,32 +168,39 @@ See [`mcp.example.json`](./mcp.example.json).
 
 ## Handoff artifacts
 
+Paths use campaign slugs — replace placeholders.
+
 ```text
-./nyc-pipeline/BOOTSTRAP_REPORT.md          # Loop 0
-./nyc-leads/nyc-business-leads-batch-1.xlsx # Loop 1
-./nyc-leads/nyc-business-leads-batch-1.csv
-./nyc-leads/summary.md
-Alkharazmi/nyc-<category>-<business>/       # Loops 2–3 (one repo per business)
+./pipeline-runs/BOOTSTRAP_REPORT.md
+./leads/<GEO_SLUG>-business-leads-batch-1.xlsx
+./leads/<GEO_SLUG>-business-leads-batch-1.csv
+./leads/<GEO_SLUG>-summary.md
+Alkharazmi/<GEO_SLUG>-<category>-<business>/    # Loops 2–3 (one repo per business)
 ```
 
 ### Per-business repo tags
 
 | Tag | Meaning |
 |-----|---------|
-| `nyc-lead` | Part of this pipeline |
+| `web-lead` | Part of this pipeline |
+| `geo:<GEO_SLUG>` | Campaign geography |
 | `pending-beta` | Plan complete, ready to implement |
 | `in-progress` | Build underway |
 | `ready-for-review` | PR open for human |
 | `ready-for-outreach` | Demo + email draft ready |
-| `batch-1` | First batch |
+| `batch-1` | First batch (increment as needed) |
 
 ### Repo naming
 
 ```text
-nyc-<category-slug>-<business-slug>
+<GEO_SLUG>-<category-slug>-<business-slug>
 ```
 
-Example: `nyc-tailor-east-side-alterations`
+Examples:
+
+- `istanbul-tailor-moda-alterations`
+- `berlin-auto-kreuzberg-garage`
+- `nyc-plumber-east-village-flow` (NYC is valid when *chosen*, not required)
 
 ---
 
@@ -179,10 +214,10 @@ Self-review checklist, each item **0–10** (max **100**). Plan must reach **≥
 4. Weaknesses addressed (trust, CTA, clarity, mobile)  
 5. Page-by-page IA fits that business  
 6. Component inventory complete  
-7. Copy direction specific (not lorem)  
+7. Copy direction specific (not lorem); **locale/language correct**  
 8. Asset list complete  
 9. `implementation.md` executable without questions  
-10. Repo hygiene (README, tags, structure)
+10. Repo hygiene (README, tags, structure) + geo tags set  
 
 **Second pass:** improve the weakest three dimensions; target **≥95**. Do not invent a fake “120” scale.
 
@@ -190,9 +225,9 @@ Self-review checklist, each item **0–10** (max **100**). Plan must reach **≥
 
 ## Suggested operating order
 
-1. Run **Loop 0** on any new machine → read `BOOTSTRAP_REPORT.md`.  
-2. Set verticals + batch size (e.g. tailors + auto repair, n=5).  
-3. Run **Loop 1** → **Gate A**.  
+1. Set **Campaign variables** (geo, language, verticals, batch).  
+2. Run **Loop 0** on any new machine → read `BOOTSTRAP_REPORT.md`.  
+3. Run **Loop 1** for that geography → **Gate A**.  
 4. Run **Loop 2** for **one** business → **Gate B**.  
 5. Run **Loop 3** for that site → **Gate C**.  
 6. Only then scale Loops 2–3 across the rest of the batch.
@@ -201,12 +236,11 @@ Self-review checklist, each item **0–10** (max **100**). Plan must reach **≥
 
 ## How to run a loop in Claude Code
 
-Paste the contents of the matching file under `loops/`, or:
+Paste the contents of the matching file under `loops/`, **after filling Campaign variables**.
 
 ```text
 /loop [auto]
-# then paste the loop body (from the ## Objective section onward is fine
-# if you already use /goal — prefer the full file for first runs)
+# paste loop body with GEOGRAPHY / GEO_SLUG filled in
 ```
 
 Prefer **one loop per session** so context stays clean.

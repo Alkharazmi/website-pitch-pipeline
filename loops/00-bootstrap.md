@@ -1,7 +1,8 @@
 # Loop 0 — Bootstrap
 
 > Run this on a **new PC** or empty Claude Code setup before research or builds.  
-> Produces a verification report. Does **not** start business research.
+> Produces a verification report. Does **not** start business research.  
+> Location-agnostic: only installs tools; campaigns set geography in Loop 1+.
 
 ---
 
@@ -10,10 +11,10 @@
 ```text
 /loop [auto]
 /goal
-# Loop 0 — Bootstrap skills, plugins, MCP, CLIs for NYC pitch pipeline
+# Loop 0 — Bootstrap skills, plugins, MCP, CLIs for local business website pitch pipeline
 
 ## Objective
-On this machine, install and verify every skill, plugin, MCP server, and CLI needed to run Loops 1–3. Produce a verification report. Do not start business research until verification passes.
+On this machine, install and verify every skill, plugin, MCP server, and CLI needed to run Loops 1–3 for **any geography**. Produce a verification report. Do not start business research until verification passes. Do not lock the pipeline to a single city or country.
 
 ## Prerequisites to check first
 - macOS or Linux with Node.js 20+, npm, git, gh CLI
@@ -90,7 +91,7 @@ Search on https://skills.sh/ and GitHub; install best available match for:
   install: npx skills add hardikpandya/stop-slop   # if published; else clone into ~/.agents/skills/stop-slop
 
 ### B3. Research skills
-- apify-ultimate-scraper (needs Apify CLI + token)
+- apify-ultimate-scraper (needs Apify CLI + token) — works for many countries/platforms
   Apify CLI: npm install -g apify-cli
   Auth: apify login  OR  export APIFY_TOKEN=...
   Console tokens: https://console.apify.com/settings/integrations
@@ -99,8 +100,6 @@ Search on https://skills.sh/ and GitHub; install best available match for:
 ### B4. Optional creative (Higgsfield)
 Source skills: https://github.com/higgsfield-ai/skills
   npx skills add higgsfield-ai/skills
-  # packages: higgsfield-generate, higgsfield-websites, higgsfield-product-photoshoot,
-  # higgsfield-marketplace-cards, higgsfield-soul-id
 CLI: npm install -g @higgsfield/cli
 Auth: follow higgsfield login docs
 
@@ -143,7 +142,7 @@ After config: restart Claude Code and list MCP tools. Failures = report, not sil
 - gh repo list Alkharazmi --limit 5
 
 ## Phase E — Verification report
-Write: ./nyc-pipeline/BOOTSTRAP_REPORT.md
+Write: ./pipeline-runs/BOOTSTRAP_REPORT.md
 
 Checklist (pass/fail each):
 [ ] node, npm, git, gh, bun
@@ -156,11 +155,12 @@ Checklist (pass/fail each):
 [ ] MCP: shadcn, magic, pollinations reachable
 [ ] higgsfield optional status
 [ ] GitHub org access (Alkharazmi)
+[ ] Confirmed: pipeline geography is campaign-variable (not hardcoded)
 
 ## Done when
 - All required items PASS (optional items may SKIP with reason)
 - BOOTSTRAP_REPORT.md written
-- Stop and show report; do NOT run Loop 1 until user says proceed
+- Stop and show report; do NOT run Loop 1 until user says proceed and sets Campaign variables (GEOGRAPHY, GEO_SLUG, LOCALE, VERTICALS)
 ```
 
 ---
@@ -181,4 +181,4 @@ Checklist (pass/fail each):
 
 ## Next
 
-→ [01-research.md](./01-research.md) after the human accepts the bootstrap report.
+→ [01-research.md](./01-research.md) after the human accepts the bootstrap report **and** fills Campaign variables (any geography).

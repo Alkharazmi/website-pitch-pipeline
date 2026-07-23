@@ -2,8 +2,10 @@
 .env
 .env.*
 !.env.example
+leads/
 nyc-leads/
-nyc-pipeline/BOOTSTRAP_REPORT.md
+pipeline-runs/
+nyc-pipeline/
 *.xlsx
 node_modules/
 .claude/settings.local.json

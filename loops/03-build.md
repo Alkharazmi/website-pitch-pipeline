@@ -1,7 +1,17 @@
 # Loop 3 — Build + outreach email
 
-> Find `Alkharazmi` repos tagged `pending-beta`, implement their plans, open PRs for human review, draft a human-sounding outreach email.  
-> **Build one site fully → Gate C** before the rest of the batch.
+> Find `Alkharazmi` repos tagged `pending-beta` (optionally filter `geo:<GEO_SLUG>`), implement their plans, open PRs for human review, draft a human-sounding outreach email in the campaign language.  
+> **Build one site fully → Gate C** before the rest of the batch.  
+> Geography is whatever the plan/campaign specifies.
+
+---
+
+## Campaign variables
+
+```text
+GEO_SLUG:           # optional filter; if set, only implement that geo's pending-beta repos
+LOCALE / LANGUAGE:
+```
 
 ---
 
@@ -10,15 +20,17 @@
 ```text
 /loop [auto]
 /goal
-# Loop 3 — Implement pending-beta plans + outreach email
+# Loop 3 — Implement pending-beta plans + outreach email (any geography)
 
 ## Prerequisite
 Only implement repos in Alkharazmi with topic/tag: pending-beta
+If GEO_SLUG is set, also require tag geo:<GEO_SLUG>
 Skip any repo not approved at Gate B.
 Build max 1 full site, then pause for human Gate C before continuing.
+Use locale/language from that repo's brief.md — do not force English or any single city aesthetic.
 
 ## Objective
-Implement each plan faithfully. When implementation matches plan acceptance criteria, add a human-sounding outreach email draft and retag repo ready-for-outreach (after human merge + demo URL when available).
+Implement each plan faithfully. When implementation matches plan acceptance criteria, add a human-sounding outreach email draft (in the business locale) and retag repo ready-for-outreach (after human merge + demo URL when available).
 
 ## Skills — MUST use
 Implement:
@@ -38,12 +50,13 @@ QA:
 
 Copy polish:
   - copy-editing + stop-slop + ogilvy on headlines/CTAs
-  - stop-slop on EMAIL_DRAFT.md (must sound human)
+  - stop-slop on EMAIL_DRAFT.md (must sound human in the target language)
 
 ## Build rules
 - Follow that repo's implementation.md and page-plans exactly
 - Unique result per business; no copying components wholesale across repos
 - Mobile-first, fast, polished UI
+- Local correctness: phone formats, maps, address style, language for that GEOGRAPHY
 - Demo CTAs allowed (Call / Get quote) using public business phone/email from brief
 - Mark concept clearly in README (sales demo concept site)
 - Do not stop until each approved repo meets its plan criteria (with evidence)
@@ -52,6 +65,7 @@ Copy polish:
 - [ ] Matches plan pages/sections
 - [ ] Mobile layout checked in browser
 - [ ] No broken links/images
+- [ ] Locale/language correct for the campaign
 - [ ] Lighthouse performance sensible for a marketing page
 - [ ] Distinct from other batch sites
 - [ ] CI green; PR opened for human review (do not self-merge if policy forbids)
@@ -66,9 +80,9 @@ Copy polish:
 
 ## Email draft (EMAIL_DRAFT.md in repo)
 Must include:
-- Subject line options (3)
+- Subject line options (3) in LOCALE language
 - Short human email (not salesy AI tone) — run stop-slop
-- What we noticed about their business (specific)
+- What we noticed about their business (specific, local)
 - Link placeholder for demo
 - Soft CTA to chat
 - No fake urgency, no fake "we already built your site live on your domain" claims unless true
@@ -77,12 +91,13 @@ Must include:
 - while building: in-progress
 - after PR ready: ready-for-review
 - after human merge + demo URL: ready-for-outreach
+- keep geo:<GEO_SLUG>
 - remove pending-beta when implementation complete
 
 ## Done when
-- All approved pending-beta repos in this batch are ready-for-review or ready-for-outreach
+- All approved pending-beta repos in this batch (and geo filter if set) are ready-for-review or ready-for-outreach
 - Each has EMAIL_DRAFT.md
-- Summary table: business | repo | demo URL | status
+- Summary table: business | geography | repo | demo URL | status
 - First site paused at Gate C before batch continues
 ```
 
@@ -92,9 +107,10 @@ Must include:
 
 - [ ] Plan criteria met with QA evidence  
 - [ ] Unique vs other batch sites  
+- [ ] Locale / local details correct  
 - [ ] PR open; CI green; human review path respected  
 - [ ] `EMAIL_DRAFT.md` human-sounding  
-- [ ] Tags updated  
+- [ ] Tags updated (incl. geo)  
 - [ ] Batch summary table written  
 - [ ] First of batch stopped for **Gate C**  
 
@@ -102,4 +118,4 @@ Must include:
 
 ## End of pipeline
 
-After Gate C and remaining builds: send emails only with human approval. Demos support negotiation — they are not a substitute for a signed engagement.
+After Gate C and remaining builds: send emails only with human approval. Demos support negotiation — they are not a substitute for a signed engagement. Same process works for **any** geography you set in the campaign block.
