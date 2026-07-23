@@ -74,10 +74,12 @@ Motion / components research:
   - shadcn MCP for component inventory candidates
   - magic MCP for distinctive UI component ideas (do not clone same set every time)
 
-Assets / site evidence:
-  - Firecrawl, Crawl4AI, Webclaw, or Scrapling for existing site colors/logo/copy extraction
-  - gstack /browse for visual checks
-  - pollinations or higgsfield only if missing hero imagery and license is mock-safe
+Assets / site evidence (see FREE_IMAGE_TOOLS.md):
+  - FIRST: Firecrawl, Crawl4AI, Webclaw, Scrapling, or /browse to pull logo/photos/og:image from their site
+  - gstack /browse for screenshots of current site
+  - FREE stock: Unsplash MCP / Pexels MCP (with free API keys + attribution) for lifestyle fillers
+  - FREE gen: Pollinations MCP (@pollinations/mcp or @pollinations/model-context-protocol) — no key — for mock heroes when brand has no usable images
+  - paid higgsfield only if human approves; never invent fake real staff faces
 
 ## Non-negotiables
 - No shared visual template across businesses

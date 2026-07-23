@@ -364,7 +364,50 @@ npx skills add mattpocock/skills --skill edit-article
 
 ---
 
-## G. Already in pipeline (keep)
+## G. Free image generation & image scraping
+
+> Full research: **[`FREE_IMAGE_TOOLS.md`](./FREE_IMAGE_TOOLS.md)**
+
+### Free image **generation** (no paid API required)
+
+| Tool | Install / config | Free? | Use |
+|------|------------------|-------|-----|
+| **Pollinations MCP** (preferred) | `npx -y @pollinations/mcp` · [pollinations/pollinations](https://github.com/pollinations/pollinations) | **Yes — no key** | Heroes, mock product shots, icons |
+| **Pollinations MCP (alt package)** | `npx -y @pollinations/model-context-protocol` | **Yes — no key** | Same; already common on this machine |
+| **Nectar MCP** (Pollinations successor to MCPollinations) | [pinkpixel-dev/nectar-mcp](https://github.com/pinkpixel-dev/nectar-mcp) | Free Pollinations tier | Gen / edit / video if official package insufficient |
+| **imagegen-frontend-web** (taste pack) | leonxlnx/taste-skill | Free skill | *What* to generate (composition), not the model |
+
+### Free image **search / stock** (free API keys)
+
+| Tool | Source | Free? | Use |
+|------|--------|-------|-----|
+| **Unsplash MCP** | [hellokaton/unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server) | Free Unsplash key | Real lifestyle photos + attribution |
+| **Pexels MCP** | [garylab/pexels-mcp-server](https://github.com/garylab/pexels-mcp-server) | Free Pexels key | Photos/video stock |
+
+```bash
+export UNSPLASH_ACCESS_KEY="..."   # https://unsplash.com/developers
+export PEXELS_API_KEY="..."        # https://www.pexels.com/api/
+# Pollinations: no key for basic use
+```
+
+### Free image **scrape** from business sites (prefer before gen)
+
+| Tool | Role |
+|------|------|
+| Firecrawl · Crawl4AI · Webclaw · Scrapling | Extract logos, og:image, gallery URLs |
+| Browser Use · gstack `/browse` | Screenshots, download visible images |
+| mcp-images style servers | Fetch/process image URLs |
+
+**Order:** scrape business brand assets → stock (Unsplash/Pexels) if needed → Pollinations only for missing mock visuals.  
+**Legal:** attribute stock; do not steal random Google Images for client demos.
+
+### Paid optional (not default)
+
+Higgsfield · inference.sh · Replicate Flux — only if human approves cost.
+
+---
+
+## H. Already in pipeline (keep)
 
 | Project | Repo / site | Notes |
 |---------|-------------|--------|
@@ -372,7 +415,7 @@ npx skills add mattpocock/skills --skill edit-article
 | stop-slop | [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) | Pairs with no-ai-slop |
 | GSAP skills | [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | Motion implementation |
 | shadcn MCP | [ui.shadcn.com](https://ui.shadcn.com/docs/mcp) | Components |
-| Higgsfield skills | [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills) | Optional assets |
+| Higgsfield skills | [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills) | Optional **paid** assets |
 
 Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md).
 
@@ -384,8 +427,8 @@ Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md)
 |------|----------------|
 | **0 Bootstrap** | Install **all Required** + **Tier S design/copy** + MCP Scrapling/Webclaw + **ADHD** |
 | **1 Research** | Firecrawl · Crawl4AI · Scrapling · Webclaw · Browser Use · Apify · marketing audit skills |
-| **2 Plan** | ADHD · frontend-design · impeccable · taste lane · marketingskills copy · ogilvy · page-cro · anti-slop · Emil · Branerail |
-| **3 Build** | impeccable · frontend-design · Emil · GSAP · shadcn · copy-editing · cold-email · ux-writing · anti-slop · Browser Use / gstack QA |
+| **2 Plan** | ADHD · frontend-design · impeccable · taste lane · marketingskills copy · ogilvy · page-cro · anti-slop · Emil · Branerail · scrape brand images · Pollinations comps if needed |
+| **3 Build** | impeccable · frontend-design · Emil · GSAP · shadcn · Pollinations heroes · Unsplash/Pexels stock · copy-editing · cold-email · ux-writing · anti-slop · Browser Use / gstack QA |
 
 ---
 

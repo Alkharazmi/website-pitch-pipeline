@@ -165,12 +165,26 @@ Full ranking: [`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)
 
 Full install + loop matrix: **[`TOOLS.md`](./TOOLS.md)**.
 
+### Free images (gen + scrape) — research
+
+Full catalog: [`FREE_IMAGE_TOOLS.md`](./FREE_IMAGE_TOOLS.md)
+
+| Tool | Role | Free? |
+|------|------|-------|
+| **Pollinations MCP** `@pollinations/mcp` | AI image gen for demos | **Yes — no key** |
+| **Pollinations** `@pollinations/model-context-protocol` | Alt free gen package | **Yes — no key** |
+| **Unsplash MCP** | Stock search + attribution | Free API key |
+| **Pexels MCP** | Stock photos/video | Free API key |
+| Firecrawl · Crawl4AI · Webclaw · Scrapling · `/browse` | Scrape logos/photos from business site | Free OSS / free tiers |
+| `imagegen-frontend-web` | Composition direction for gen | Free skill |
+| `higgsfield-*` | Paid upgrade only | Paid |
+
+**Order:** scrape brand assets → Unsplash/Pexels if needed → Pollinations for missing mock visuals.
+
 ### Optional creative & meta
 
 | Skill / MCP | Role |
 |-------------|------|
-| `higgsfield-*` | Heroes, product shots (needs CLI auth) |
-| `pollinations-images` MCP | Free image gen fallback |
 | `magic` MCP (21st.dev) | UI component ideas |
 | `shadcn` MCP | shadcn components |
 | [SkillOpt](https://github.com/microsoft/SkillOpt) | Optimize pipeline skills from trajectories (optional) |
@@ -184,7 +198,10 @@ Full install + loop matrix: **[`TOOLS.md`](./TOOLS.md)**.
 |--------|-------------|-----------|
 | **shadcn** | `npx -y shadcn@latest mcp` | Yes (build) |
 | **magic** (21st.dev) | `npx -y @21st-dev/magic@latest` + `API_KEY` | Recommended |
-| **pollinations-images** | `npx -y @pollinations/model-context-protocol` | Recommended |
+| **pollinations** | `npx -y @pollinations/mcp` | **Yes — free image gen** |
+| **pollinations-images** | `npx -y @pollinations/model-context-protocol` | Alt free gen (pick one Pollinations server) |
+| **unsplash** | free `UNSPLASH_ACCESS_KEY` | Recommended stock |
+| **pexels** | free `PEXELS_API_KEY` | Recommended stock |
 | **webclaw** | `webclaw-mcp` or brew/npx per [0xMassi/webclaw](https://github.com/0xMassi/webclaw) | Recommended (local extract) |
 | **scrapling** | via `pip install "scrapling[ai]"` MCP | Recommended (hard scrapes) |
 | **n8n** | HTTP MCP URL + bearer | Optional automation |
@@ -197,9 +214,12 @@ export N8N_MCP_URL="..."
 export N8N_MCP_TOKEN="..."
 export APIFY_TOKEN="..."
 export FIRECRAWL_API_KEY="..."   # if using Firecrawl cloud
+export UNSPLASH_ACCESS_KEY="..." # free stock (optional)
+export PEXELS_API_KEY="..."      # free stock (optional)
+# Pollinations free gen: no key required for basic use
 ```
 
-See [`mcp.example.json`](./mcp.example.json).
+See [`mcp.example.json`](./mcp.example.json) · [`FREE_IMAGE_TOOLS.md`](./FREE_IMAGE_TOOLS.md).
 
 ---
 
@@ -310,3 +330,4 @@ Prefer **one loop per session** so context stays clean.
 | [INSTALL.md](./INSTALL.md) | Install sources cheat sheet |
 | [TOOLS.md](./TOOLS.md) | Required external tools/skills catalog + install |
 | [DESIGN_AND_COPY_SKILLS.md](./DESIGN_AND_COPY_SKILLS.md) | Research: best design + writing skills ranked |
+| [FREE_IMAGE_TOOLS.md](./FREE_IMAGE_TOOLS.md) | Research: free image gen + scrape MCPs/skills |

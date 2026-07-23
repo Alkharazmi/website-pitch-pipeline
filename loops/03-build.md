@@ -43,6 +43,10 @@ Implement:
   - gsap-skills when implementing motion
   - shadcn MCP to add components correctly
   - magic MCP only for gaps, not to homogenize batch
+  - FREE images (FREE_IMAGE_TOOLS.md):
+      1) use scraped brand assets from plan/assets.md first
+      2) Unsplash/Pexels MCP for attributed stock when needed
+      3) Pollinations MCP for free AI heroes/icons (no API key)
   - install anime.js if the plan calls for it
   - use custom global skills installed on the machine
 

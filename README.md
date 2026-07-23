@@ -77,6 +77,7 @@ Full system write-up: **[`PIPELINE.md`](./PIPELINE.md)**
 Install sources: **[`INSTALL.md`](./INSTALL.md)**  
 Tools catalog (Firecrawl, Crawl4AI, Browser Use, Scrapling, Webclaw, marketing & design skills…): **[`TOOLS.md`](./TOOLS.md)**  
 Best design & copy skills (deep research + install ranks): **[`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)**  
+Free image gen + scrape (Pollinations, Unsplash, Pexels…): **[`FREE_IMAGE_TOOLS.md`](./FREE_IMAGE_TOOLS.md)**  
 MCP template: **[`mcp.example.json`](./mcp.example.json)**
 
 ---
@@ -195,7 +196,8 @@ See [`loops/04-run-report.md`](./loops/04-run-report.md) and [`runs/README.md`](
 | Copy (Tier S) | [marketingskills](https://github.com/coreyhaines31/marketingskills) (copywriting, cold-email, page-cro…) · [stop-slop](https://github.com/hardikpandya/stop-slop) · [no-ai-slop](https://github.com/petergyang/no-ai-slop) · ogilvy · [ux-writing](https://github.com/content-designer/ux-writing-skill) |
 | Marketing packs | [ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude), [digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro) |
 | Research | Apify, [Firecrawl](https://github.com/firecrawl/firecrawl), [Crawl4AI](https://github.com/unclecode/crawl4ai), [Scrapling](https://github.com/D4Vinci/Scrapling), [Webclaw](https://github.com/0xMassi/webclaw), [Browser Use](https://github.com/browser-use/browser-use) |
-| MCP | shadcn, magic, pollinations, webclaw, scrapling |
+| Free images | **Pollinations MCP** (no key) · Unsplash/Pexels MCP (free keys) · site scrape via Firecrawl/browse — see [FREE_IMAGE_TOOLS.md](./FREE_IMAGE_TOOLS.md) |
+| MCP | shadcn, magic, pollinations, unsplash, pexels, webclaw, scrapling |
 | Motion | `gsap-skills`, Emil animation skills |
 | Meta / ops | [SkillOpt](https://github.com/microsoft/SkillOpt), [kepano-obsidian](https://github.com/kepano/kepano-obsidian) |
 
@@ -212,6 +214,7 @@ website-pitch-pipeline/
 ├── INSTALL.md                       # short install table
 ├── TOOLS.md                         # required external tools + skills
 ├── DESIGN_AND_COPY_SKILLS.md        # deep research: best design + writing skills
+├── FREE_IMAGE_TOOLS.md              # free image gen + scrape MCPs/skills
 ├── mcp.example.json
 ├── runs/
 │   ├── README.md                    # report upload rules

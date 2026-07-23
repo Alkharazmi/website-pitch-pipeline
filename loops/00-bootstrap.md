@@ -193,10 +193,22 @@ Template: this repo's mcp.example.json
   env: API_KEY from env MAGIC_API_KEY
   Site: https://21st.dev
 
-### C3. pollinations-images (image gen fallback)
+### C3. FREE image generation — Pollinations (required for demos without brand photos)
+  # Preferred (no API key):
   command: npx
-  args: ["-y", "@pollinations/model-context-protocol"]
-  Site: https://pollinations.ai
+  args: ["-y", "@pollinations/mcp"]
+  # Alternate package (also free, no key):
+  # args: ["-y", "@pollinations/model-context-protocol"]
+  Site: https://pollinations.ai · repo: https://github.com/pollinations/pollinations
+  # Optional successor community server: pinkpixel-dev/nectar-mcp
+  # Full research: FREE_IMAGE_TOOLS.md
+
+### C3b. FREE stock image search (optional free keys)
+  Unsplash MCP: hellokaton/unsplash-mcp-server + UNSPLASH_ACCESS_KEY
+    https://unsplash.com/developers
+  Pexels MCP: garylab/pexels-mcp-server + PEXELS_API_KEY
+    https://www.pexels.com/api/
+  Use for real photography with attribution when AI gen is wrong fit.
 
 ### C4. webclaw MCP (recommended local extract)
   command/path per https://github.com/0xMassi/webclaw (webclaw-mcp or brew install)
@@ -242,8 +254,10 @@ Checklist (pass/fail each):
 [ ] skillopt optional status
 [ ] kepano vault template optional status
 [ ] brane-code optional status
-[ ] MCP: shadcn, magic, pollinations, webclaw reachable
-[ ] higgsfield optional status
+[ ] MCP: shadcn, magic, pollinations FREE gen (no key), webclaw reachable
+[ ] optional Unsplash + Pexels free keys for stock
+[ ] FREE_IMAGE_TOOLS.md present
+[ ] higgsfield optional paid status
 [ ] GitHub org access (Alkharazmi)
 [ ] Confirmed: pipeline geography is campaign-variable (not hardcoded)
 [ ] TOOLS.md catalog present in pipeline repo

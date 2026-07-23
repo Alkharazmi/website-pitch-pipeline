@@ -21,7 +21,10 @@ Quick reference for Loop 0 and new machines. Prefer official docs if URLs move.
 | Higgsfield CLI | npm `@higgsfield/cli` | `npm i -g @higgsfield/cli` |
 | shadcn MCP | [ui.shadcn.com/docs/mcp](https://ui.shadcn.com/docs/mcp) | `npx shadcn@latest mcp` |
 | 21st magic MCP | [21st.dev](https://21st.dev) | `npx @21st-dev/magic@latest` |
-| Pollinations MCP | [pollinations.ai](https://pollinations.ai) | `@pollinations/model-context-protocol` |
+| **Pollinations MCP (FREE gen)** | [pollinations/pollinations](https://github.com/pollinations/pollinations) · [pollinations.ai](https://pollinations.ai) | `npx -y @pollinations/mcp` **or** `@pollinations/model-context-protocol` — **no API key** |
+| **Unsplash MCP (FREE stock)** | [hellokaton/unsplash-mcp-server](https://github.com/hellokaton/unsplash-mcp-server) | free key: unsplash.com/developers |
+| **Pexels MCP (FREE stock)** | [garylab/pexels-mcp-server](https://github.com/garylab/pexels-mcp-server) | free key: pexels.com/api |
+| **Nectar MCP (Pollinations)** | [pinkpixel-dev/nectar-mcp](https://github.com/pinkpixel-dev/nectar-mcp) | free Pollinations tier (optional) |
 | Apify | [apify.com](https://apify.com) · [integrations](https://console.apify.com/settings/integrations) | `npm i -g apify-cli` |
 | Bun (gstack) | [bun.sh](https://bun.sh) | install script |
 | Claude Code | [Anthropic docs](https://docs.anthropic.com/en/docs/claude-code) | official installer |
@@ -84,10 +87,15 @@ export N8N_MCP_URL="..."
 export N8N_MCP_TOKEN="..."
 export APIFY_TOKEN="..."
 export FIRECRAWL_API_KEY="..."
+# Free stock image APIs (optional)
+export UNSPLASH_ACCESS_KEY="..."
+export PEXELS_API_KEY="..."
+# Pollinations: no key required for basic free image gen
 # Browser Use / LLM providers as required by that tool's docs
 ```
 
 ## MCP template
 
 Copy [`mcp.example.json`](./mcp.example.json) into your Claude MCP config and replace placeholders with env-backed values.  
-Also wire **Webclaw** and/or **Scrapling** MCP when installed (see [`TOOLS.md`](./TOOLS.md)).
+Also wire **Webclaw** and/or **Scrapling** MCP when installed (see [`TOOLS.md`](./TOOLS.md)).  
+Free image stack details: [`FREE_IMAGE_TOOLS.md`](./FREE_IMAGE_TOOLS.md).
