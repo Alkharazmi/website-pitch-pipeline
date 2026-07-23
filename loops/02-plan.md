@@ -49,7 +49,7 @@ Design direction (Tier S stack — see DESIGN_AND_COPY_SKILLS.md):
   - vercel web-design-guidelines for quality bar
   - high-end-visual-design OR minimalist-ui OR industrial-brutalist-ui
     (pick ONE lane per business; never reuse the same lane for two businesses in the batch)
-  - ui-ux-pro-max (palette/type pairing suggestions)
+  - ui-ux-pro-max (https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — available; use when needed for palette/type/product-type suggestions (do not fight a locked taste lane)
   - brandkit when identity is weak
   - redesign-existing-projects when they have an old site
   - extract-design-system when pulling tokens from an existing site

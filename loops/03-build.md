@@ -36,6 +36,7 @@ Implement each plan faithfully. When implementation matches plan acceptance crit
 Implement:
   - implementation.md of that repo is law
   - impeccable + design-taste-frontend + chosen style skill while coding
+  - ui-ux-pro-max when needed (palette/type/product patterns); skip if DESIGN.md already locks tokens
   - ADHD (https://github.com/UditAkhourii/adhd) when stuck on structure/UX alternatives
   - Branerail (https://github.com/UditAkhourii/branerail) for architectural audits if build exceeds pure static marketing
   - image-to-code if design refs exist

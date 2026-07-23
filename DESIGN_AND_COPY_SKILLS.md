@@ -29,7 +29,7 @@
 | S2 | **impeccable** (+ polish/audit/critique) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) · [impeccable.style](https://impeccable.style/) | **~203K** (+ command family ~500K+) | Full design language for agents: PRODUCT.md/DESIGN.md, anti-patterns, craft commands. Paul Bakaus (ex-jQuery UI / Google). |
 | S3 | **web-design-guidelines** | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | **~484K** | Official Vercel web quality bar; pairs with Next.js demos. |
 | S4 | **design-taste-frontend** | [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | **~281K** | Anti-slop landings/portfolios; brief-first direction. |
-| S5 | **ui-ux-pro-max** | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **~280K** | Large palette/type/product-type library for agents. |
+| S5 | **ui-ux-pro-max** | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | **~280K** | Large palette/type/product-type library. **Install always; invoke when needed** (pairings, product-type UI, chart/layout ideas) — not required on every page if a taste lane already owns the look. |
 | S6 | **emil-design-eng** (+ animation skills) | [emilkowalski/skills](https://github.com/emilkowalski/skills) | **~156K** | Design-engineer taste (Vercel/Linear pedigree); motion done right. |
 | S7 | **high-end-visual-design** | leonxlnx/taste-skill | **~218K** | Premium agency bar when demo must feel expensive. |
 
@@ -159,6 +159,7 @@ If `leonxlnx/taste-skill` package name fails, skills are often already present a
 
 - Loading **impeccable + 4 taste skills + ui-ux-pro-max** with conflicting palettes → muddy output.  
   **Pick one visual lane**, keep impeccable + frontend-design as governors.  
+  **ui-ux-pro-max** is a toolbox: open it when you need palette/type/product-type suggestions; do not let it override an already chosen lane.  
 - Using only SEO skills for outreach email → sounds robotic. Always anti-slop.  
 - Skipping **page-cro** → pretty pages that don’t convert interest.
 

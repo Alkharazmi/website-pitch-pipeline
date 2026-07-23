@@ -327,7 +327,7 @@ Pipeline default remains **Claude Code + gstack**. Brane Code is an escape hatch
 | **impeccable** | `npx impeccable install` · or `npx skills add pbakaus/impeccable` | Design language + PRODUCT/DESIGN.md; ~203K + command family |
 | **web-design-guidelines** | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` | Vercel official web quality (~484K) |
 | **design-taste-frontend** + taste pack | `npx skills add leonxlnx/taste-skill` | Anti-slop landings; high-end / minimal / brutalist lanes |
-| **ui-ux-pro-max** | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` | Palettes, type, product patterns (~280K) |
+| **ui-ux-pro-max** | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` | Install always. **Use when needed**: palettes, font pairings, product-type UI patterns (~280K). Optional per-page if a taste lane already defines the system. |
 | **emilkowalski/skills** | `npx skills@latest add emilkowalski/skills` | Design-engineer motion/UI (~156K emil-design-eng) |
 
 ### Design — Tier A (recommended)

@@ -101,7 +101,7 @@ Full ranking: [`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)
 | `impeccable` ([pbakaus/impeccable](https://github.com/pbakaus/impeccable)) | Design language, PRODUCT/DESIGN.md, polish/audit | ~203K+ |
 | `web-design-guidelines` ([vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)) | Vercel web quality bar | ~484K |
 | `design-taste-frontend` + [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | Landings anti-slop + style lanes | ~281K |
-| `ui-ux-pro-max` | Palettes, type, product patterns | ~280K |
+| `ui-ux-pro-max` ([nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)) | Install always; **invoke when needed** for palettes, type pairings, product-type UI | ~280K |
 | `high-end-visual-design` / `minimalist-ui` / `industrial-brutalist-ui` | **One** lane per business | 180–220K each |
 | `brandkit` · `imagegen-frontend-web` · `image-to-code` · `redesign-existing-projects` | Identity / refs / redesigns | taste pack |
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) | Design-engineer motion/UI | ~156K |

@@ -79,6 +79,8 @@ Install via `npx skills add <source>` when available on skills.sh, otherwise clo
   # industrial-brutalist-ui, redesign-existing-projects, brandkit,
   # imagegen-frontend-web, image-to-code, stitch-design-taste, gpt-taste, …
   npx skills add nextlevelbuilder/ui-ux-pro-max-skill
+  # ui-ux-pro-max: install for availability; agents pull it when they need
+  # palette/type/product-type libraries — not mandatory on every design step
   npx skills@latest add emilkowalski/skills
   npx skills add mattpocock/skills --skill design-an-interface
   npx skills add arvindrk/extract-design-system

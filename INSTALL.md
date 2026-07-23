@@ -47,7 +47,7 @@ Full ranking: [`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)
 | **impeccable** | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) · [impeccable.style](https://impeccable.style/) | `npx impeccable install` |
 | **web-design-guidelines** | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` |
 | **taste-skill pack** | [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | `npx skills add leonxlnx/taste-skill` |
-| **ui-ux-pro-max** | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` |
+| **ui-ux-pro-max** | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` — install; agents use **when needed** (palettes/type/patterns) |
 | **Emil design skills** | [emilkowalski/skills](https://github.com/emilkowalski/skills) | `npx skills@latest add emilkowalski/skills` |
 | **design-an-interface** | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add mattpocock/skills --skill design-an-interface` |
 | **extract-design-system** | [arvindrk/extract-design-system](https://github.com/arvindrk/extract-design-system) | `npx skills add arvindrk/extract-design-system` |
