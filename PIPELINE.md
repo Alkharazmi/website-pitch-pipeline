@@ -39,8 +39,21 @@ ORG:               Alkharazmi
 | **1** | [`loops/01-research.md`](./loops/01-research.md) | Find businesses → Excel workbook | **Gate A** — human approves Excel |
 | **2** | [`loops/02-plan.md`](./loops/02-plan.md) | Unique plan + GitHub repo per business | **Gate B** — human approves first plan |
 | **3** | [`loops/03-build.md`](./loops/03-build.md) | Implement demos + outreach email | **Gate C** — human approves first build |
+| **4** | [`loops/04-run-report.md`](./loops/04-run-report.md) | Full run report → push to this repo | Report live on GitHub |
 
 **Never skip gates.** Quality collapses when agents batch-plan or batch-build without a human sample check.
+
+### Mandatory: run report on pipeline completion
+
+```text
+The pipeline run is NOT DONE until a full report is uploaded to:
+  Alkharazmi/website-pitch-pipeline
+  path: runs/<YYYY-MM-DD>/<GEO_SLUG>-<campaign-slug>/
+```
+
+- Required after the batch finishes, the human says “close the run,” or the run aborts mid-way (mark status `partial` / `aborted`).
+- **Do not** claim “pipeline complete” without a GitHub URL to `REPORT.md`.
+- Template: [`runs/_template/`](./runs/_template/) · rules: [`runs/README.md`](./runs/README.md) · loop: [`loops/04-run-report.md`](./loops/04-run-report.md).
 
 ---
 
@@ -75,6 +88,7 @@ GEO:     set per campaign (see Campaign variables)
 - Never claim “done” without checklist evidence.
 - Prefer fewer excellent leads over many weak ones.
 - “Do not stop until done” always means **done = written acceptance criteria**, not infinite polish.
+- **Run complete** additionally requires Loop 4: report pushed to `Alkharazmi/website-pitch-pipeline` under `runs/`.
 
 ### Stack defaults (pitch / demo sites)
 
@@ -199,6 +213,14 @@ Paths use campaign slugs — replace placeholders.
 ./leads/<GEO_SLUG>-business-leads-batch-1.csv
 ./leads/<GEO_SLUG>-summary.md
 Alkharazmi/<GEO_SLUG>-<category>-<business>/    # Loops 2–3 (one repo per business)
+
+# After run (Loop 4) — MUST be on GitHub in this repo:
+Alkharazmi/website-pitch-pipeline/runs/<YYYY-MM-DD>/<GEO_SLUG>-<campaign-slug>/
+  REPORT.md
+  SUMMARY.md
+  checklist.md            # recommended
+  leads-snapshot.csv      # recommended
+  artifacts/              # optional
 ```
 
 ### Per-business repo tags
@@ -253,7 +275,8 @@ Self-review checklist, each item **0–10** (max **100**). Plan must reach **≥
 3. Run **Loop 1** for that geography → **Gate A**.  
 4. Run **Loop 2** for **one** business → **Gate B**.  
 5. Run **Loop 3** for that site → **Gate C**.  
-6. Only then scale Loops 2–3 across the rest of the batch.
+6. Only then scale Loops 2–3 across the rest of the batch.  
+7. Run **Loop 4** — upload full report to `runs/` on this repo (**required before “done”**).
 
 ---
 
@@ -280,6 +303,9 @@ Prefer **one loop per session** so context stays clean.
 | [loops/01-research.md](./loops/01-research.md) | Lead research |
 | [loops/02-plan.md](./loops/02-plan.md) | Site planning + repos |
 | [loops/03-build.md](./loops/03-build.md) | Implementation + email |
+| [loops/04-run-report.md](./loops/04-run-report.md) | Full run report → push to this repo |
+| [runs/README.md](./runs/README.md) | Run report folder rules |
+| [runs/_template/](./runs/_template/) | REPORT.md + SUMMARY.md templates |
 | [mcp.example.json](./mcp.example.json) | MCP config template (no secrets) |
 | [INSTALL.md](./INSTALL.md) | Install sources cheat sheet |
 | [TOOLS.md](./TOOLS.md) | Required external tools/skills catalog + install |

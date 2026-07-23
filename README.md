@@ -18,10 +18,10 @@ Geography is a campaign variable. Aesthetics first. Human gates. No generic temp
 <br />
 
 ```text
-  SET GEO ──► RESEARCH ──► PLAN ──► BUILD ──► EMAIL
-  campaign      Excel       repos    demos     outreach
-                 ▲           ▲        ▲
-              Gate A      Gate B   Gate C
+  SET GEO ──► RESEARCH ──► PLAN ──► BUILD ──► EMAIL ──► REPORT
+  campaign      Excel       repos    demos     outreach   runs/ on this repo
+                 ▲           ▲        ▲                      ▲
+              Gate A      Gate B   Gate C              must push to GitHub
 ```
 
 </div>
@@ -71,6 +71,7 @@ Full rules: [`PIPELINE.md`](./PIPELINE.md).
 | **1** | Research | [`loops/01-research.md`](./loops/01-research.md) | Excel + CSV of leads for **that geo** | **Gate A** |
 | **2** | Plan | [`loops/02-plan.md`](./loops/02-plan.md) | One GitHub repo + plan pack per business | **Gate B** |
 | **3** | Build | [`loops/03-build.md`](./loops/03-build.md) | Demo site PR + `EMAIL_DRAFT.md` | **Gate C** |
+| **4** | Run report | [`loops/04-run-report.md`](./loops/04-run-report.md) | Full report under `runs/` **on this repo** | Report live on GitHub |
 
 Full system write-up: **[`PIPELINE.md`](./PIPELINE.md)**  
 Install sources: **[`INSTALL.md`](./INSTALL.md)**  
@@ -108,6 +109,7 @@ Loop 1  →  review Excel          (Gate A)
 Loop 2  →  review first plan     (Gate B)
 Loop 3  →  review first build    (Gate C)
 Then scale Loops 2–3 across the batch
+Loop 4  →  upload full report to runs/ on this repo  (REQUIRED before "done")
 ```
 
 ### 4. How to invoke a loop
@@ -133,6 +135,17 @@ Paste the fenced prompt from the matching `loops/*.md` file **with campaign fiel
 | **C** | After first build | Mobile polish, locale correct, distinct look, email sounds human |
 
 > Do not batch-plan or batch-build past a gate. One excellent sample beats ten weak clones.
+
+## Mandatory run report (Loop 4)
+
+When a campaign finishes (or is closed/aborted), the agent **must** push a full report to **this** repo:
+
+```text
+runs/<YYYY-MM-DD>/<GEO_SLUG>-<campaign-slug>/REPORT.md
+```
+
+See [`loops/04-run-report.md`](./loops/04-run-report.md) and [`runs/README.md`](./runs/README.md).  
+**No report on GitHub → pipeline run is incomplete.**
 
 ---
 
@@ -200,11 +213,15 @@ website-pitch-pipeline/
 ├── TOOLS.md                         # required external tools + skills
 ├── DESIGN_AND_COPY_SKILLS.md        # deep research: best design + writing skills
 ├── mcp.example.json
+├── runs/
+│   ├── README.md                    # report upload rules
+│   └── _template/                   # REPORT.md + SUMMARY.md
 └── loops/
     ├── 00-bootstrap.md
     ├── 01-research.md
     ├── 02-plan.md
-    └── 03-build.md
+    ├── 03-build.md
+    └── 04-run-report.md             # mandatory end-of-run upload
 ```
 
 Per-business demo repos (Loop 2):

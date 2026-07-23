@@ -103,11 +103,12 @@ Must include:
 - keep geo:<GEO_SLUG>
 - remove pending-beta when implementation complete
 
-## Done when
+## Done when (Loop 3 only — not full pipeline)
 - All approved pending-beta repos in this batch (and geo filter if set) are ready-for-review or ready-for-outreach
 - Each has EMAIL_DRAFT.md
 - Summary table: business | geography | repo | demo URL | status
 - First site paused at Gate C before batch continues
+- After the batch is closed: proceed to Loop 4 (run report). Loop 3 alone is NOT "pipeline complete."
 ```
 
 ---
@@ -125,6 +126,21 @@ Must include:
 
 ---
 
+## After Loop 3 → Loop 4 (required)
+
+When the batch is finished (or the human closes the run), **you must** run  
+[`04-run-report.md`](./04-run-report.md): write `REPORT.md` + `SUMMARY.md` and **push** them to:
+
+`Alkharazmi/website-pitch-pipeline` → `runs/<YYYY-MM-DD>/<GEO_SLUG>-<campaign>/`
+
+**The pipeline is not done until that report is on GitHub.**
+
+---
+
 ## End of pipeline
 
-After Gate C and remaining builds: send emails only with human approval. Demos support negotiation — they are not a substitute for a signed engagement. Same process works for **any** geography you set in the campaign block.
+1. Gate C + remaining builds  
+2. **Loop 4 run report uploaded**  
+3. Send emails only with human approval  
+
+Demos support negotiation — they are not a substitute for a signed engagement. Same process works for **any** geography you set in the campaign block.
