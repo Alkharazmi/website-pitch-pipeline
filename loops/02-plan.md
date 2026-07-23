@@ -42,27 +42,34 @@ Ideation (required for uniqueness):
   - Branerail (https://github.com/UditAkhourii/branerail) when defining system shape,
     implementation.md architecture, resilience, or DESIGN.md discipline
 
-Design direction:
+Design direction (Tier S stack — see DESIGN_AND_COPY_SKILLS.md):
+  - anthropics frontend-design — intentional anti-generic direction before any layout lock
   - design-taste-frontend (brief inference + anti-slop)
-  - impeccable (init design context / brand register for marketing sites)
+  - impeccable (init PRODUCT.md/DESIGN.md; craft commands)
+  - vercel web-design-guidelines for quality bar
   - high-end-visual-design OR minimalist-ui OR industrial-brutalist-ui
     (pick ONE lane per business; never reuse the same lane for two businesses in the batch)
   - ui-ux-pro-max (palette/type pairing suggestions)
   - brandkit when identity is weak
   - redesign-existing-projects when they have an old site
+  - extract-design-system when pulling tokens from an existing site
   - imagegen-frontend-web for section concept images when helpful
+  - design-an-interface (mattpocock) for interaction/IA judgment when needed
   - gstack /design-consultation → produce DESIGN.md
   - gstack /design-shotgun when two directions compete
   - diagram-design for user-flow diagram (unique per business)
 
-Copy / marketing:
-  - copywriting + ogilvy for positioning/headlines/CTAs in LOCALE language
-  - stop-slop AND no-ai-slop (https://github.com/petergyang/no-ai-slop) on all long prose
-  - AI Marketing Claude (https://github.com/zubair-trabzada/ai-marketing-claude) for audits/positioning
-  - Digital Marketing Pro (https://github.com/indranilbanerjee/digital-marketing-pro) for strategy/SEO depth when installed
+Copy / writing (Tier S stack):
+  - coreyhaines31 copywriting + copy-editing + marketing-psychology
+  - page-cro / cro for persuasion structure on pitch pages
+  - ogilvy for sell-first headlines/promises
+  - content-strategy / site-architecture for multi-page narrative
+  - stop-slop AND no-ai-slop on all long prose in briefs
+  - AI Marketing Claude for audits/positioning when installed
+  - Digital Marketing Pro for strategy/SEO depth when installed
 
 Motion / components research:
-  - emilkowalski/skills (https://github.com/emilkowalski/skills) — emil-design-eng, animation vocabulary, apple-design
+  - emilkowalski/skills — emil-design-eng, review-animations, animation-vocabulary, apple-design
   - gsap-skills plugin docs for motion plan (only if motion helps)
   - shadcn MCP for component inventory candidates
   - magic MCP for distinctive UI component ideas (do not clone same set every time)

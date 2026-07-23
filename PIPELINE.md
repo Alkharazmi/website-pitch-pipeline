@@ -91,40 +91,36 @@ User preferences for later full products: HTML, CSS, JavaScript, Next.js; backen
 
 ## Skills map
 
-### Design / UI (Loops 2–3)
+### Design / UI (Loops 2–3) — research Tier S
 
-| Skill / command | Role |
-|-----------------|------|
-| `impeccable` | Craft, polish, anti-generic UI |
-| `design-taste-frontend` | Landing / portfolio anti-slop direction |
-| `high-end-visual-design` | Premium agency bar |
-| `ui-ux-pro-max` | Palettes, type pairings, patterns |
-| `minimalist-ui` / `industrial-brutalist-ui` | Distinct style lanes (one per business) |
-| `brandkit` | Identity when brand is weak |
-| `imagegen-frontend-web` | Section visual direction |
-| `image-to-code` | Refs → implementation |
-| `redesign-existing-projects` | Audit old sites |
-| `frontend-design` (plugin) | Intentional visual direction |
-| gstack `/design-consultation` | Full system + `DESIGN.md` |
-| gstack `/design-shotgun` | Multiple variants |
-| gstack `/design-html` | HTML/CSS finalization |
-| gstack `/design-review` | Visual QA |
-| gstack `/qa` · `/qa-only` | Browser QA |
-| gstack `/browse` | Headless browser (**not** Chrome MCP) |
-| `gsap-skills` (plugin) | Correct GSAP usage |
-| `diagram-design` (plugin) | User-flow / IA diagrams |
+Full ranking: [`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)
 
-### Copy / outreach (Loops 2–3)
+| Skill / command | Role | Signal |
+|-----------------|------|--------|
+| `frontend-design` ([anthropics/skills](https://github.com/anthropics/skills)) | Official anti-generic UI direction | ~695K installs |
+| `impeccable` ([pbakaus/impeccable](https://github.com/pbakaus/impeccable)) | Design language, PRODUCT/DESIGN.md, polish/audit | ~203K+ |
+| `web-design-guidelines` ([vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)) | Vercel web quality bar | ~484K |
+| `design-taste-frontend` + [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | Landings anti-slop + style lanes | ~281K |
+| `ui-ux-pro-max` | Palettes, type, product patterns | ~280K |
+| `high-end-visual-design` / `minimalist-ui` / `industrial-brutalist-ui` | **One** lane per business | 180–220K each |
+| `brandkit` · `imagegen-frontend-web` · `image-to-code` · `redesign-existing-projects` | Identity / refs / redesigns | taste pack |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) | Design-engineer motion/UI | ~156K |
+| `design-an-interface` (mattpocock) | Interaction / IA judgment | ~170K |
+| `extract-design-system` | Tokens from existing sites | ~126K |
+| gstack `/design-consultation` · `/design-shotgun` · `/design-review` · `/qa` · `/browse` | System, variants, visual QA | gstack |
+| `gsap-skills` · `diagram-design` | Motion + flows | plugins |
 
-| Skill | Role |
-|-------|------|
-| `copywriting` | Page copy structure |
-| `copy-editing` | Edit / polish |
-| `ogilvy` / `ogilvy-copywriting` | Headlines that sell |
-| `stop-slop` | Kill AI-sounding prose (emails especially) |
-| `no-ai-slop` ([petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)) | Extra anti-slop pass on briefs + emails |
-| AI Marketing Claude ([zubair-trabzada/ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude)) | Audits, sequences, competitive intel, PDF reports |
-| Digital Marketing Pro ([indranilbanerjee/digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro)) | Strategy / SEO / agency-depth marketing skills |
+### Copy / writing / outreach (Loops 2–3) — research Tier S
+
+| Skill | Role | Signal |
+|-------|------|--------|
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) pack | copywriting, copy-editing, cold-email, page-cro, marketing-psychology, seo-audit, content-strategy, emails, ad-creative | ~41k★ pack |
+| `stop-slop` ([hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop)) | Remove AI writing tells | ~14k★ |
+| `no-ai-slop` ([petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)) | Second anti-slop pass | specialist |
+| `ogilvy` ([boraoztunc/skills](https://github.com/boraoztunc/skills)) | Sell-first advertising principles | specialist |
+| `ux-writing-skill` ([content-designer/ux-writing-skill](https://github.com/content-designer/ux-writing-skill)) | UI microcopy | specialist |
+| `edit-article` (mattpocock) | Long-form polish | ~155K |
+| AI Marketing Claude · Digital Marketing Pro | Suite audits / agency SEO | suites |
 
 ### Design-engineer motion (Loops 2–3)
 
@@ -287,3 +283,4 @@ Prefer **one loop per session** so context stays clean.
 | [mcp.example.json](./mcp.example.json) | MCP config template (no secrets) |
 | [INSTALL.md](./INSTALL.md) | Install sources cheat sheet |
 | [TOOLS.md](./TOOLS.md) | Required external tools/skills catalog + install |
+| [DESIGN_AND_COPY_SKILLS.md](./DESIGN_AND_COPY_SKILLS.md) | Research: best design + writing skills ranked |

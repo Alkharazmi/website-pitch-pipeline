@@ -314,7 +314,57 @@ Pipeline default remains **Claude Code + gstack**. Brane Code is an escape hatch
 
 ---
 
-## F. Already in pipeline (keep)
+## F. Best design & writing skills (research-backed)
+
+> Full ranking, evidence, and stack order: **[`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)**  
+> Sources: [skills.sh](https://www.skills.sh/) install leaderboard (2026-07-23), GitHub reputation, pipeline fit.
+
+### Design — Tier S (required)
+
+| Skill | Install | Why |
+|-------|---------|-----|
+| **frontend-design** | `npx skills add anthropics/skills --skill frontend-design` | ~695K installs; official Anthropic anti-generic UI |
+| **impeccable** | `npx impeccable install` · or `npx skills add pbakaus/impeccable` | Design language + PRODUCT/DESIGN.md; ~203K + command family |
+| **web-design-guidelines** | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` | Vercel official web quality (~484K) |
+| **design-taste-frontend** + taste pack | `npx skills add leonxlnx/taste-skill` | Anti-slop landings; high-end / minimal / brutalist lanes |
+| **ui-ux-pro-max** | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` | Palettes, type, product patterns (~280K) |
+| **emilkowalski/skills** | `npx skills@latest add emilkowalski/skills` | Design-engineer motion/UI (~156K emil-design-eng) |
+
+### Design — Tier A (recommended)
+
+```bash
+npx skills add mattpocock/skills --skill design-an-interface
+npx skills add arvindrk/extract-design-system
+# taste pack also provides: redesign-existing-projects, brandkit,
+# imagegen-frontend-web, image-to-code, high-end-visual-design, etc.
+```
+
+### Writing / copy — Tier S (required)
+
+| Skill | Install | Why |
+|-------|---------|-----|
+| **marketingskills pack** | `npx skills add coreyhaines31/marketingskills` | Best marketing suite (~41k★): copywriting, copy-editing, cold-email, page-cro, marketing-psychology, seo-audit, content-strategy, emails, ad-creative… |
+| **stop-slop** | `npx skills add hardikpandya/stop-slop` | Strip AI writing tells (~14k★) |
+| **no-ai-slop** | `npx skills add petergyang/no-ai-slop` | Second anti-slop pass (20+ patterns) |
+| **ogilvy** | `npx skills add boraoztunc/skills --skill ogilvy` | Classic sell-first advertising principles |
+
+### Writing — Tier A (recommended)
+
+```bash
+npx skills add content-designer/ux-writing-skill   # UI microcopy
+npx skills add mattpocock/skills --skill edit-article
+# From marketingskills (already in pack): cold-email, page-cro, seo-audit, emails
+```
+
+### Stack order (do not load everything at once)
+
+**Plan:** ADHD → frontend-design + design-taste → **one** visual lane → impeccable DESIGN.md → copywriting + psychology + ogilvy → page-cro → stop-slop + no-ai-slop  
+
+**Build:** implementation.md → impeccable + frontend-design → emil motion → copy-editing + anti-slop → cold-email for EMAIL_DRAFT → ux-writing for microcopy  
+
+---
+
+## G. Already in pipeline (keep)
 
 | Project | Repo / site | Notes |
 |---------|-------------|--------|
@@ -332,10 +382,10 @@ Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md)
 
 | Loop | Prefer these |
 |------|----------------|
-| **0 Bootstrap** | Install **all Required** rows above + MCP wiring for Scrapling/Webclaw when used + **ADHD** skill |
+| **0 Bootstrap** | Install **all Required** + **Tier S design/copy** + MCP Scrapling/Webclaw + **ADHD** |
 | **1 Research** | Firecrawl · Crawl4AI · Scrapling · Webclaw · Browser Use · Apify · marketing audit skills |
-| **2 Plan** | **ADHD** for unique concepts · Branerail for architecture · Firecrawl/Crawl4AI · Emil · marketing packs · no-ai-slop |
-| **3 Build** | Emil · GSAP · shadcn · Browser Use / gstack QA · ADHD when stuck · Branerail audits · no-ai-slop on email |
+| **2 Plan** | ADHD · frontend-design · impeccable · taste lane · marketingskills copy · ogilvy · page-cro · anti-slop · Emil · Branerail |
+| **3 Build** | impeccable · frontend-design · Emil · GSAP · shadcn · copy-editing · cold-email · ux-writing · anti-slop · Browser Use / gstack QA |
 
 ---
 
@@ -369,6 +419,15 @@ export MAGIC_API_KEY="..."
 [ ] webclaw CLI and/or MCP
 [ ] no-ai-slop skill present
 [ ] emilkowalski/skills installed
+[ ] anthropics frontend-design
+[ ] pbakaus/impeccable (npx impeccable install)
+[ ] vercel web-design-guidelines
+[ ] leonxlnx/taste-skill (or individual taste skills)
+[ ] nextlevelbuilder ui-ux-pro-max
+[ ] coreyhaines31/marketingskills (copywriting + cold-email + page-cro + …)
+[ ] hardikpandya/stop-slop + petergyang/no-ai-slop
+[ ] ogilvy skill
+[ ] content-designer/ux-writing-skill (or SKIP)
 [ ] UditAkhourii/adhd installed (npx skills add UditAkhourii/adhd)
 [ ] branerail installed (or SKIP + reason)
 [ ] ai-marketing-claude installed

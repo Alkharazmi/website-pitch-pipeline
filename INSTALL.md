@@ -37,20 +37,44 @@ Quick reference for Loop 0 and new machines. Prefer official docs if URLs move.
 | **Scrapling** | [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling) | `pip install "scrapling[all]"` · `scrapling install` |
 | **Webclaw** | [0xMassi/webclaw](https://github.com/0xMassi/webclaw) | `brew install webclaw` or Cargo; MCP + `npx skills add 0xMassi/webclaw-skill` |
 
-## Writing, marketing, design skills (required additions)
+## Best design skills (research Tier S)
+
+Full ranking: [`DESIGN_AND_COPY_SKILLS.md`](./DESIGN_AND_COPY_SKILLS.md)
 
 | Piece | Where | Install idea |
 |-------|--------|--------------|
-| **No AI Slop** | [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) | Install skill globally / clone into agent skills |
-| **SkillOpt** | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | `pip install skillopt` (optional meta-optimizer) |
+| **frontend-design** | [anthropics/skills](https://github.com/anthropics/skills) · ~695K installs | `npx skills add anthropics/skills --skill frontend-design` |
+| **impeccable** | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) · [impeccable.style](https://impeccable.style/) | `npx impeccable install` |
+| **web-design-guidelines** | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | `npx skills add vercel-labs/agent-skills --skill web-design-guidelines` |
+| **taste-skill pack** | [leonxlnx/taste-skill](https://github.com/leonxlnx/taste-skill) | `npx skills add leonxlnx/taste-skill` |
+| **ui-ux-pro-max** | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | `npx skills add nextlevelbuilder/ui-ux-pro-max-skill` |
+| **Emil design skills** | [emilkowalski/skills](https://github.com/emilkowalski/skills) | `npx skills@latest add emilkowalski/skills` |
+| **design-an-interface** | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add mattpocock/skills --skill design-an-interface` |
+| **extract-design-system** | [arvindrk/extract-design-system](https://github.com/arvindrk/extract-design-system) | `npx skills add arvindrk/extract-design-system` |
+| **GSAP skills** | [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | Claude plugin marketplace |
+
+## Best copy / writing skills (research Tier S)
+
+| Piece | Where | Install idea |
+|-------|--------|--------------|
+| **Marketing Skills pack** | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) · ~41k★ | `npx skills add coreyhaines31/marketingskills` |
+| → includes | copywriting, copy-editing, cold-email, page-cro, marketing-psychology, seo-audit, content-strategy, emails, ad-creative | (one pack) |
+| **stop-slop** | [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop) | `npx skills add hardikpandya/stop-slop` |
+| **no-ai-slop** | [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) | `npx skills add petergyang/no-ai-slop` |
+| **ogilvy** | [boraoztunc/skills](https://github.com/boraoztunc/skills) | `npx skills add boraoztunc/skills --skill ogilvy` |
+| **ux-writing** | [content-designer/ux-writing-skill](https://github.com/content-designer/ux-writing-skill) | `npx skills add content-designer/ux-writing-skill` |
+| **edit-article** | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add mattpocock/skills --skill edit-article` |
+
+## Other writing / marketing / ideation
+
+| Piece | Where | Install idea |
+|-------|--------|--------------|
 | **AI Marketing Claude** | [zubair-trabzada/ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude) | `curl …/install.sh \| bash` or clone + `./install.sh` |
 | **Digital Marketing Pro** | [indranilbanerjee/digital-marketing-pro](https://github.com/indranilbanerjee/digital-marketing-pro) | `/plugin install digital-marketing-pro@neels-plugins` |
-| **Kepano Obsidian** | [kepano/kepano-obsidian](https://github.com/kepano/kepano-obsidian) | `git clone` vault template (optional ops) |
-| **Emil design skills** | [emilkowalski/skills](https://github.com/emilkowalski/skills) | `npx skills@latest add emilkowalski/skills` |
 | **ADHD (ideation)** | [UditAkhourii/adhd](https://github.com/UditAkhourii/adhd) | `npx skills add UditAkhourii/adhd` |
-| **Branerail (architecture)** | [UditAkhourii/branerail](https://github.com/UditAkhourii/branerail) | `npm i -g @uditakhouri/branerail` |
-| **Brane Code (optional runtime)** | [UditAkhourii/brane-code](https://github.com/UditAkhourii/brane-code) | clone + upstream README |
-| **Udit Akhouri (author)** | [github.com/UditAkhourii](https://github.com/UditAkhourii) | profile / other experiments |
+| **Branerail** | [UditAkhourii/branerail](https://github.com/UditAkhourii/branerail) | `npm i -g @uditakhouri/branerail` |
+| **SkillOpt** | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | `pip install skillopt` (optional) |
+| **Kepano Obsidian** | [kepano/kepano-obsidian](https://github.com/kepano/kepano-obsidian) | `git clone` vault template (optional) |
 
 ## Environment variables (never commit)
 

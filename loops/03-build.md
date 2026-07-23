@@ -52,10 +52,13 @@ QA:
   - emilkowalski review-animations / improve-animations skills on motion
   - redesign-existing-projects audit pass if porting from old site patterns
 
-Copy polish:
+Copy polish (Tier S writing stack):
   - copy-editing + stop-slop + no-ai-slop + ogilvy on headlines/CTAs
+  - cold-email skill (coreyhaines31/marketingskills) for EMAIL_DRAFT structure
+  - ux-writing-skill for buttons, forms, empty/error microcopy
+  - edit-article for any long-form on-page sections
   - AI Marketing Claude email/outreach skills when helpful
-  - stop-slop + no-ai-slop on EMAIL_DRAFT.md (must sound human in the target language)
+  - Final pass: stop-slop + no-ai-slop on EMAIL_DRAFT.md (must sound human in target language)
 
 ## Build rules
 - Follow that repo's implementation.md and page-plans exactly

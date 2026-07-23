@@ -68,27 +68,33 @@ Verify in Claude settings: enabledPlugins matches the list above.
 
 Install via `npx skills add <source>` when available on skills.sh, otherwise clone/copy SKILL.md into ~/.claude/skills/<name>/ or ~/.agents/skills/<name>/ and symlink into Claude skills if needed.
 
-### B1. Must-have design skills
-Search on https://skills.sh/ and GitHub; install best available match for:
-- impeccable
-- design-taste-frontend
-- high-end-visual-design
-- ui-ux-pro-max
-- minimalist-ui
-- industrial-brutalist-ui
-- brandkit
-- imagegen-frontend-web
-- image-to-code
-- redesign-existing-projects
-- frontend-design (covered by plugin if skill missing)
+### B1. Best design skills (research Tier S — see DESIGN_AND_COPY_SKILLS.md)
+  # Official + highest install volume on skills.sh
+  npx skills add anthropics/skills --skill frontend-design
+  npx impeccable install
+  # or: npx skills add pbakaus/impeccable
+  npx skills add vercel-labs/agent-skills --skill web-design-guidelines
+  npx skills add leonxlnx/taste-skill
+  # design-taste-frontend, high-end-visual-design, minimalist-ui,
+  # industrial-brutalist-ui, redesign-existing-projects, brandkit,
+  # imagegen-frontend-web, image-to-code, stitch-design-taste, gpt-taste, …
+  npx skills add nextlevelbuilder/ui-ux-pro-max-skill
+  npx skills@latest add emilkowalski/skills
+  npx skills add mattpocock/skills --skill design-an-interface
+  npx skills add arvindrk/extract-design-system
+  # Also enable Claude plugin: frontend-design@claude-plugins-official if available
+  # GSAP: greensock/gsap-skills plugin
 
-### B2. Must-have copy skills
-- copywriting
-- copy-editing
-- ogilvy / ogilvy-copywriting
-- stop-slop
-  known source: https://github.com/hardikpandya/stop-slop
-  install: npx skills add hardikpandya/stop-slop   # if published; else clone into ~/.agents/skills/stop-slop
+### B2. Best copy / writing skills (research Tier S)
+  # Dominant marketing pack (copywriting, copy-editing, cold-email, page-cro,
+  # marketing-psychology, seo-audit, content-strategy, emails, ad-creative, …)
+  npx skills add coreyhaines31/marketingskills
+  npx skills add hardikpandya/stop-slop
+  npx skills add petergyang/no-ai-slop
+  npx skills add boraoztunc/skills --skill ogilvy
+  npx skills add content-designer/ux-writing-skill
+  npx skills add mattpocock/skills --skill edit-article
+  # Verify: npx skills list | grep -E 'copy|ogilvy|slop|frontend|impeccable|taste'
 
 ### B3. Research skills
 - apify-ultimate-scraper (needs Apify CLI + token) — works for many countries/platforms
@@ -215,8 +221,10 @@ Checklist (pass/fail each):
 [ ] node, npm, git, gh, bun
 [ ] gstack installed + /browse works
 [ ] plugins: frontend-design, gsap-skills, diagram-design, superpowers
-[ ] design skills present (list paths)
-[ ] copy skills present
+[ ] design Tier S: frontend-design, impeccable, web-design-guidelines, taste-skill, ui-ux-pro-max, emilkowalski
+[ ] copy Tier S: coreyhaines31/marketingskills, stop-slop, no-ai-slop, ogilvy
+[ ] ux-writing-skill + edit-article (or SKIP)
+[ ] DESIGN_AND_COPY_SKILLS.md present in pipeline repo
 [ ] apify CLI + auth (or marked SKIP with reason)
 [ ] firecrawl CLI/API (https://github.com/firecrawl/firecrawl)
 [ ] crawl4ai installed
