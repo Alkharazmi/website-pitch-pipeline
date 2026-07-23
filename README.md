@@ -83,7 +83,7 @@ MCP template: **[`mcp.example.json`](./mcp.example.json)**
 ### 1. Clone this repo
 
 ```bash
-gh repo clone Alkharazmi/nyc-website-pitch-pipeline
+gh repo clone Alkharazmi/website-pitch-pipeline
 cd nyc-website-pitch-pipeline
 ```
 
