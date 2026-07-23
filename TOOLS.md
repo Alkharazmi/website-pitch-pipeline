@@ -447,6 +447,9 @@ Full bootstrap still lives in [`loops/00-bootstrap.md`](./loops/00-bootstrap.md)
 export FIRECRAWL_API_KEY="..."
 export APIFY_TOKEN="..."
 export MAGIC_API_KEY="..."
+export UNSPLASH_ACCESS_KEY="..."   # free stock
+export PEXELS_API_KEY="..."        # free stock
+# Pollinations: no key for basic free image gen
 # Browser Use / LLM keys as required by that tool's docs
 ```
 
@@ -460,6 +463,10 @@ export MAGIC_API_KEY="..."
 [ ] browser-use installed (or SKIP + reason)
 [ ] scrapling + scrapling install browsers
 [ ] webclaw CLI and/or MCP
+[ ] Pollinations MCP free gen (@pollinations/mcp or model-context-protocol) — no key
+[ ] optional Unsplash MCP + free key
+[ ] optional Pexels MCP + free key
+[ ] FREE_IMAGE_TOOLS.md present
 [ ] no-ai-slop skill present
 [ ] emilkowalski/skills installed
 [ ] anthropics frontend-design
